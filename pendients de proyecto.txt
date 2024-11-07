@@ -1,0 +1,127 @@
+FDA|
+
+hacer chicharronera en java
+
+java.util.Math;
+java.util.Scanner;
+Scanner sc = new Scanner(System.in)
+
+
+-b+- [sqrt(b^2 - 4ac) / 2a]
+
+public void formulaSegundGrado(int a, int b, int c){
+      int x1 = 0;
+      int x2 = 0;
+
+      System.out.println("Ingresa el valor de A");
+      a = sc.readInt();
+      System.out.println("Ingresa el valor de B");
+      b = sc.readInt();
+      System.out.println("Ingresa el valor de C");
+      c = sc.readInt();
+      
+      b = b * -1;
+
+      int b_plus = b;
+      int b_neg = b;
+
+      int b_secondPower = Math.pow(2,b);
+      int fourth_AC = (4 * (a*c));
+
+      int sqrtVal = b_secondPower-fourth_AC;
+      
+      sqrtVal  = Math.sqrt(sqrtVal)
+
+      int doubleA= a *2;
+      
+      int finalResult= sqrtVal / doubleA;
+
+      x1 =  b_neg - finalResult;
+      x2 = b_plus + finalResult;
+
+      System.out.println("Valor de raíz x1 es:" + x1 );
+      System.out.println("Valor de raíz x2 es:" + x2 );
+}
+
+
+
+
+
+
+
+---------------------------------------------------------------
+Pendinetes de proyecto:
+realizar vistas pdtes:
+login //done
+register //done
+email de token recueprar contra viw//done
+pagina e single product//done
+carrito //done
+checkout
+
+
+pagina de producots con sus filtros //meterle marca a cada prodcuto 
+pagia pa poner token y new password 
+laindin page // haceru a lading page
+
+alertas de flasa credencales login
+email compro exitosa
+perifl de hisotrial de compra //done
+pagina de 404
+
+pasar todo  a español
+//terminarnr esto hoy//
+
+
+
+
+
+
+
+
+realiza del backend
+vsitas admin (crid de producto, listado pedidos, listado clientes, moduloIOT).
+google login y sus vistas
+paypal y sus vistas
+admin crudss de productos, listad de pedidos.listado de lcinets
+admin iot modulo
+aplicsr bien los middlewares
+------------------------------------------------
+meter datos precargads BIEN hehcos
+testing de compras  que funcioenn correctamente
+-----------------------------------------------
+subit a vercel o subir a dominio y server propio
+y camibar rutas dentro de codigo
+------------------------------------------------
+hacer diagram lofico
+doc iee380
+doc de presentacion de proyecto
+doc de diagama logico
+
+
+
+
+planes cunado aacabe e l proyecto
+ir a barranca con los del proeycto
+ircotorrear conjarod
+comer con sr martin
+ver a ribe
+ver a rhubas
+ir con ana cine
+ir con ana picnic o algo outdoor
+chill ana en asa movie nguht
+erraza con los del proeyecto
+picnic o bar con mariana y alex y así
+
+maybe ir a nevado de Toluca pronto!
+entrenar mahcinnn en anoche en el parque o algo así pero entrenarr mucho
+navidad comprarme ropa o unas pesas
+
+
+
+
+
+
+
+
+
