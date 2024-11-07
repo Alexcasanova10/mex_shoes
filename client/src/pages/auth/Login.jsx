@@ -24,7 +24,7 @@ export default function Login() {
           <h1>{error}</h1>
         ) : (
           <>
-      <form className="max-w-sm mt-14 mb-10 mx-auto h-5/6" onSubmit={submitHandler}>
+            <form className="max-w-sm mt-14 mb-10 mx-auto h-5/6" onSubmit={submitHandler}>
           <h1 class="text-3xl mb-7  dark:text-white">Inicio de Sesión</h1>
           <p class="text-2xl mb-7 font-thin text-gray-900 dark:text-white">¿No tienes cuenta? <span><a class="font-medium text-dark-600 dark:text -500 hover:underline" href="/register">Crear cuenta</a></span></p>
 

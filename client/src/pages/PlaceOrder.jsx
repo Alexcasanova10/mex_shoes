@@ -133,11 +133,11 @@ export default function PlaceOrder() {
                   <span className="ml-auto text-gray-900">${subtotal}</span>
                 </div>
                 <div className="flex border-t border-gray-200 py-2">
-                  <span className="text-gray-500">Tax</span>
+                  <span className="text-gray-500">Impuestos</span>
                   <span className="ml-auto text-gray-900">${taxPrice}</span>
                 </div>
                 <div className="flex border-t border-b mb-6 border-gray-200 py-2">
-                  <span className="text-gray-500">Shipping Price</span>
+                  <span className="text-gray-500">Costo de envío</span>
                   <span className="ml-auto text-gray-900">
                     ${shippingPrice}
                   </span>

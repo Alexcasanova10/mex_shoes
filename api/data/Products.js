@@ -9,6 +9,8 @@ const products =  [
     countInStock: 10,
     rating: 4.8,
     numReview: 15,
+    brand: "Adidas",
+    sizes: [24, 24.5, 25, 25.5, 26, 26.5, 27, 27.5, 28, 28.5, 29, 29.5],
   },
   {
     name: "Adidas Forum Low",
@@ -20,6 +22,8 @@ const products =  [
     countInStock: 5,
     rating: 4.5,
     numReview: 22,
+    brand: "Adidas",
+    sizes: [24, 24.5, 25, 25.5, 26, 26.5, 27, 27.5, 28, 28.5, 29, 29.5],
   },
   {
     name: "Adidas Stan Smith",
@@ -31,6 +35,8 @@ const products =  [
     countInStock: 7,
     rating: 4.7,
     numReview: 18,
+    brand: "Adidas",
+    sizes: [24, 24.5, 25, 25.5, 26, 26.5, 27, 27.5, 28, 28.5, 29, 29.5],
   },
   {
     name: "Adidas Stan Smith Crepe",
@@ -42,6 +48,8 @@ const products =  [
     countInStock: 3,
     rating: 4.6,
     numReview: 10,
+    brand: "Adidas",
+    sizes: [24, 24.5, 25, 25.5, 26, 26.5, 27, 27.5, 28, 28.5, 29, 29.5],
   },
   {
     name: "Adidas Superstar ADV",
@@ -53,6 +61,8 @@ const products =  [
     countInStock: 6,
     rating: 4.9,
     numReview: 30,
+    brand: "Adidas",
+    sizes: [24, 24.5, 25, 25.5, 26, 26.5, 27, 27.5, 28, 28.5, 29, 29.5],
   },
   {
     name: "Adidas Forum 84 Low ADV",
@@ -64,7 +74,79 @@ const products =  [
     countInStock: 8,
     rating: 4.4,
     numReview: 12,
+    brand: "Adidas",
+    sizes: [24, 24.5, 25, 25.5, 26, 26.5, 27, 27.5, 28, 28.5, 29, 29.5],
   },
+  {
+    name: "Nike Air Max 90",
+    image:
+      "https://static.nike.com/a/images/t_default/78bbcc91-7c6f-4e31-9b6b-9cb3e39440c8/air-max-90-shoe-bLc1BR.png",
+    description:
+      "Los Nike Air Max 90 ofrecen una comodidad superior y un estilo retro-moderno, perfecto para un look casual.",
+    price: 140,
+    countInStock: 8,
+    rating: 4.7,
+    numReview: 25,
+    brand: "Nike",
+    sizes: [24, 24.5, 25, 25.5, 26, 26.5, 27, 27.5, 28, 28.5, 29, 29.5],
+  },
+  {
+    name: "Puma RS-X³ Puzzle",
+    image:
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_450,h_450/global/371570/01/sv01/fnd/EEA/fmt/png",
+    description:
+      "Las Puma RS-X³ Puzzle combinan color y comodidad, perfectas para quienes buscan un estilo llamativo y urbano.",
+    price: 110,
+    countInStock: 12,
+    rating: 4.6,
+    numReview: 18,
+    brand: "Puma",
+    sizes: [24, 24.5, 25, 25.5, 26, 26.5, 27, 27.5, 28, 28.5, 29, 29.5],
+  },
+  {
+    name: "Vans Old Skool",
+    image:
+      "https://images.vans.com/is/image/Vans/DSV6QU-HERO?$PDP-FULL-IMAGE$",
+    description:
+      "Las clásicas Vans Old Skool en blanco y negro, perfectas para un look relajado y urbano.",
+    price: 65,
+    countInStock: 20,
+    rating: 4.5,
+    numReview: 34,
+    brand: "Vans",
+    sizes: [24, 24.5, 25, 25.5, 26, 26.5, 27, 27.5, 28, 28.5, 29, 29.5],
+  },
+  {
+    name: "Reebok Club C 85",
+    image:
+      "https://assets.reebok.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/8b4c853740dd4a7eb364a9f101261776_9366/Club_C_85_Shoes_White_GW5015_01_standard.jpg",
+    description:
+      "Un diseño clásico de Reebok con el Club C 85, perfectas para el día a día y con una gran durabilidad.",
+    price: 75,
+    countInStock: 15,
+    rating: 4.3,
+    numReview: 12,
+    brand: "Reebok",
+    sizes: [24, 24.5, 25, 25.5, 26, 26.5, 27, 27.5, 28, 28.5, 29, 29.5],
+  },
+  {
+    name: "New Balance 574",
+    image:
+      "https://nb.scene7.com/is/image/NB/m574egr_nb_02_i?$pdpflexf2$&wid=880&hei=880",
+    description:
+      "El modelo New Balance 574 ofrece un look retro-moderno y gran comodidad para el uso diario.",
+    price: 90,
+    countInStock: 6,
+    rating: 4.6,
+    numReview: 19,
+    brand: "Otras",
+    sizes: [24, 24.5, 25, 25.5, 26, 26.5, 27, 27.5, 28, 28.5, 29, 29.5],
+  },
+
+
+]
+
+module.exports = products;
 
   // { ejemplo de objeto con 3 imafenes, así haremos la insercion de los demas datos
   //   "name": "Adidas Samba Classic",
@@ -79,15 +161,3 @@ const products =  [
   //   "rating": 4.8,
   //   "numReview": 15
   // }
-
-
-
-
-
-
-
-
-
-]
-
-module.exports = products;

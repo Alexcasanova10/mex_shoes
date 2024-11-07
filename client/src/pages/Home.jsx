@@ -1,12 +1,13 @@
 import Layout from "../Layouts/Layouts"
 import Products from "../components/Products"
+// import Landing from "./Landing"
 
 const Home =  () => {
     return (
       <Layout>
 
         {/* aqui abria que pponer el landing pge, toca crearlo! */}
-        <Products></Products>
+        {/* <Landing></Landing> */}
       </Layout>
     );
 }

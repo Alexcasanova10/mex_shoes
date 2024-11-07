@@ -57,35 +57,27 @@ register //done
 email de token recueprar contra viw//done
 pagina e single product//done
 carrito //done
-checkout
-
-
-pagina de producots con sus filtros //meterle marca a cada prodcuto 
-pagia pa poner token y new password 
-laindin page // haceru a lading page
-
-alertas de flasa credencales login
-email compro exitosa
+checkout //done
+pagia pa poner token y new password //done
+pagina de producots con sus filtros //done
+pagina de 404 //done
 perifl de hisotrial de compra //done
-pagina de 404
 
+perfil de usuariio//
+laindin page // haceru a lading page
 pasar todo  a español
 //terminarnr esto hoy//
 
-
-
-
-
-
-
-
 realiza del backend
 vsitas admin (crid de producto, listado pedidos, listado clientes, moduloIOT).
+alertas de flasa credencales login
 google login y sus vistas
 paypal y sus vistas
 admin crudss de productos, listad de pedidos.listado de lcinets
 admin iot modulo
 aplicsr bien los middlewares
+email compro exitosa
+fitlros de tienda y paginacion
 ------------------------------------------------
 meter datos precargads BIEN hehcos
 testing de compras  que funcioenn correctamente
@@ -99,7 +91,7 @@ doc de presentacion de proyecto
 doc de diagama logico
 
 
-
+-----------------------------
 
 planes cunado aacabe e l proyecto
 ir a barranca con los del proeycto

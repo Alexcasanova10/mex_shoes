@@ -44,6 +44,8 @@ app.use(cors())
 app.get('/', (req,res)=>{
   res.send('hola mundo')
 })
+
+
 //database seeder routes
 app.use("/api/seed", databaseSeeder);
 
@@ -59,6 +61,11 @@ app.use("/api/orders", orderRoute);
 // paypal payment api for client key;
 app.use("/api/config/paypal", (req, res) => {
   res.send(process.env.PAYPAL_CLIENT_ID);
+});
+
+
+app.use((req, res, next) => {
+  res.status(404).json({"message": "pagina no encontrada"});
 });
 
 app.listen(PORT || 9000, () => {

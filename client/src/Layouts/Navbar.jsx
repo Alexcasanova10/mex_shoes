@@ -26,6 +26,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false)
   return (
     <>
+
       {/* <nav className="bg-white border-gray-200 dark:bg-gray-900">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link to="/" className="flex items-center">
@@ -156,7 +157,10 @@ const Navbar = () => {
         </Link>
         
         <ul className="flex gap-x-10 text-md">
-          <li><a className="relative text-2xl flex items-center gap-x-2 text-black after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-black after:opacity-0 after:scale-x-0 hover:after:opacity-100 hover:after:scale-x-100 after:transition-all after:duration-300 after:origin-right hover:after:origin-left" href="/">Tienda</a></li>
+          <Link to="/products" className="flex items-center">
+            <li><a className="relative text-2xl flex items-center gap-x-2 text-black after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-black after:opacity-0 after:scale-x-0 hover:after:opacity-100 hover:after:scale-x-100 after:transition-all after:duration-300 after:origin-right hover:after:origin-left" href="/">Tienda</a></li>
+          </Link>
+
           <li><a className="relative text-2xl flex items-center gap-x-2 text-black after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-black after:opacity-0 after:scale-x-0 hover:after:opacity-100 hover:after:scale-x-100 after:transition-all after:duration-300 after:origin-right hover:after:origin-left" href="/">Puma</a></li>
           <li><a className="relative text-2xl flex items-center gap-x-2 text-black after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-black after:opacity-0 after:scale-x-0 hover:after:opacity-100 hover:after:scale-x-100 after:transition-all after:duration-300 after:origin-right hover:after:origin-left" href="/">Adidas</a></li>
           <li><a className="relative text-2xl flex items-center gap-x-2 text-black after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-black after:opacity-0 after:scale-x-0 hover:after:opacity-100 hover:after:scale-x-100 after:transition-all after:duration-300 after:origin-right hover:after:origin-left" href="/">Nike</a></li>

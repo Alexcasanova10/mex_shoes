@@ -7,6 +7,12 @@ import {
 } from "react-router-dom";
 import ProductDetail from "./pages/ProductDetail";
 import Home from "./pages/Home";
+import Profile from "./pages/Profile";
+
+import Products from "./components/Products";
+
+import NotFound from "./pages/NotFound"
+
 import Login from "./pages/auth/Login";
 import Recuperar from "./pages/auth/Recuperar";
 import Reset from "./pages/auth/Reset";
@@ -39,6 +45,14 @@ function App() {
             element={userInfo ? <Navigate to="/"></Navigate> : <Register />}
           ></Route>
 
+          <Route
+            exact
+            path="/profile"
+            element= {userInfo ?  <Profile/>:<Navigate to="/login"></Navigate>}
+          ></Route>
+
+          <Route exact path="/products" element={<Products />}></Route>
+
           <Route exact path="/recuperar" element={<Recuperar />}></Route>
           <Route exact path="/reset" element={<Reset />}></Route>
 
@@ -48,6 +62,12 @@ function App() {
 
           <Route exact path="/checkout" element={<Checkout />}></Route>
           <Route exact path="/placeorder" element={<PlaceOrder />}></Route>
+
+
+
+
+          <Route path="*" element={<NotFound />} />
+
         </Routes>
       </Router>
     </>
