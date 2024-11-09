@@ -19,7 +19,6 @@ import { BASE_URL } from "../Constants/BASE_URL";
 
 
 //user login action 
-
 export const userLoginAction = (email, password) => async (dispatch)=>{
     try {
         dispatch({ type: USER_LOGIN_REQ })
@@ -41,6 +40,39 @@ export const userLoginAction = (email, password) => async (dispatch)=>{
        })
     }
 }
+
+export const userLoginActionGoogle = () => async (dispatch)=>{
+    try {
+        dispatch({ type: USER_LOGIN_REQ })
+        // const config = {
+        //     headers: {
+        //         "Content-Type": "application/json",
+        //     }
+        // }
+        const { data } = await axios.get(`${BASE_URL}/auth/google`, {
+            withCredentials: true, 
+        });
+
+        dispatch({ type: USER_LOGIN_REQ_SUCCESS, payload: data });
+        localStorage.setItem("userInfo", JSON.stringify(data))
+
+        window.location.href = "/";
+
+    } catch (error) {
+        dispatch({
+            type: USER_LOGIN_REQ_FAIL,
+            payload: error.response.data.message
+       })
+    }
+}
+
+
+
+
+
+
+
+
 
 
 //user logout action 
@@ -77,7 +109,9 @@ export const userRegisterAction = (name, email, password) => async (dispatch) =>
     }
 }
 
-
+/*
+estas dos de abajo pdtes de modficarlas pa q jalen la info
+*/
 //jala toda la info de perfil..usar esta eigual para el perfil info update en la vista de perfil    
 export const userProfileAction = () => async (dispatch, getState) => {
     try {
@@ -104,8 +138,6 @@ export const userProfileAction = () => async (dispatch, getState) => {
         });
     }
 };
-
-
 
 export const getUserProfile = () => async (dispatch, getState) => {
     try {

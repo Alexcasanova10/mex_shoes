@@ -1,13 +1,14 @@
 const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
-const products = require("./data/Products");
 dotenv.config();
 const PORT = process.env.PORT;
 const cors = require("cors")
 const mongoose = require("mongoose");
 const session = require('express-session');
-
+const jwt = require("jsonwebtoken");
+const passport = require('./passportConfig.js'); 
+// const GoogleStrategy = passport-google-oauth20
 
 
 //conectr db de mongo
@@ -45,6 +46,29 @@ app.get('/', (req,res)=>{
   res.send('hola mundo')
 })
 
+//rutas google auth
+app.get('/auth/google', 
+  passport.authenticate('google', { scope: ['profile', 'email'] })
+
+);
+
+//rutas google auth
+app.get('/auth/google/callback', 
+  passport.authenticate('google', { 
+      failureRedirect: '/login' 
+  }), 
+  (req, res) => {
+    
+    const token = jwt.sign({ id: req.user._id }, process.env.JWT_SECRET, {
+      expiresIn: "30d",
+    });
+    req.session.token = token;
+
+    // res.redirect('/api/users/profile');
+    // res.redirect('/api/users/profile');
+
+  }
+);
 
 //database seeder routes
 app.use("/api/seed", databaseSeeder);

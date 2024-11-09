@@ -1,6 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import Layout from "../../Layouts/Layouts";
 import { userLoginAction } from "../../Redux/Actions/User";
+
+// import { userLoginActionGoogle } from "../../Redux/Actions/User";
+import { BASE_URL } from "../../Redux/Constants/BASE_URL";
+
 import { useState } from "react";
 
 export default function Login() {
@@ -15,14 +19,29 @@ export default function Login() {
     e.preventDefault();
     dispatch(userLoginAction(email, password));
   };
+
+  const submitHandlerGoogle = (e) => {
+    e.preventDefault();
+
+    try {
+      // Redirige al usuario al endpoint de Google para la autenticación
+      window.location.href = `${BASE_URL}/auth/google`;
+    } catch (error) {
+      console.error("Error al iniciar sesión con Google:", error);
+    }
+
+    // dispatch(userLoginActionGoogle());
+  };
+
+
   return (
     <>
       <Layout>
-        {loading ? (
+        {/* {loading ? (
           <h1>loading</h1>
         ) : error ? (
           <h1>{error}</h1>
-        ) : (
+        ) : ( */}
           <>
             <form className="max-w-sm mt-14 mb-10 mx-auto h-5/6" onSubmit={submitHandler}>
           <h1 class="text-3xl mb-7  dark:text-white">Inicio de Sesión</h1>
@@ -52,15 +71,15 @@ export default function Login() {
                 <a href="/recuperar" class="text-dark dark:text hover:underline">¿Olvidaste tu contraseña?</a>
 
               </div>
-               
 
               <button type="submit" class="text-white bg-[#050708] hover:bg-[#050708]/80 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium block w-full  text-lg px-5 py-2.5 text-center  dark:hover:bg-[#050708]/40 dark:focus:ring-gray-600 me-2 mb-7"> 
                 Iniciar Sesión
               </button>
 
-              
+            </form>
 
-              <button type="button" class="text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 font-medium block w-full text-lg px-5 py-2.5 text-center inline-flex justify-center items-center dark:focus:ring-gray-300 mb-2">
+            <form className="max-w-sm mt-10 mb-10 mx-auto h-5/6" onSubmit={submitHandlerGoogle}>
+              <button type="submit" class="text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 font-medium block w-full text-lg px-5 py-2.5 text-center inline-flex justify-center items-center dark:focus:ring-gray-300 mb-2">
                 <svg class="w-5 h-5 mr-2" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
                   <path fill="#4285F4" d="M488 261.8c0-17.8-1.5-35.6-4.7-52.9H250.2v99.8h134.5c-5.8 30.2-23.1 55.8-49 73.2v60.8h79.2c46.2-42.6 73.1-105.5 73.1-180.9z"></path>
                   <path fill="#34A853" d="M250.2 508c65.6 0 120.6-21.8 160.8-59l-79.2-60.8c-23.7 16-54 25.7-81.5 25.7-62.6 0-115.7-42.5-134.6-99.5H26.4v62.5C66.8 455.6 153.8 508 250.2 508z"></path>
@@ -69,13 +88,10 @@ export default function Login() {
                 </svg>
                 Iniciar sesión con Google
               </button>
-
-
-
-
             </form>
+
           </>
-        )}
+        {/* )} */}
       </Layout>
     </>
   );

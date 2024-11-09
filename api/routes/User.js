@@ -104,7 +104,6 @@ userRoute.post("/login",
         token: generateToken(user._id),
         createdAt: user.createdAt,
         redirectTo: '/api/users/profile'
-
       });
     } else {
       res.status(401);

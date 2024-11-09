@@ -28,6 +28,16 @@ function App() {
 
   const userLoginReducer = useSelector((state) => state.userLoginReducer)
   const {userInfo} = userLoginReducer
+  
+
+  // useEffect(() => {
+  //   if (userInfo) {
+  //     window.location.href = "/";
+  //   }
+  // }, [userInfo]);
+
+
+  
   return (
     <>
       <Router>
@@ -39,6 +49,14 @@ function App() {
             path="/login"
             element={userInfo ? <Navigate to="/"></Navigate> : <Login />}
           ></Route>
+
+          <Route
+            exact
+            path="/"
+            element={userInfo ? <Navigate to="/"></Navigate> : <Login />}
+          ></Route>
+
+
           <Route
             exact
             path="/register"
