@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { productListAction } from "../Redux/Actions/Product";
@@ -7,13 +7,31 @@ import Layout from "../Layouts/Layouts";
 const Products = () => {
   const dispatch = useDispatch();
   const productListReducer = useSelector((state) => state.productListReducer);
-  const { loading, error, products = [] } = productListReducer;
+  const { loading, error, products = [],total } = productListReducer;
+
+  const [selectedBrand, setSelectedBrand] = useState("");
+  const [sortOrder, setSortOrder] = useState(""); // Estado para el orden
+
+  // useEffect(() => {
+  //   dispatch(productListAction());
+  // }, [dispatch]);
 
   useEffect(() => {
-    dispatch(productListAction());
-  }, [dispatch]);
+    dispatch(productListAction(selectedBrand, sortOrder));
+  }, [dispatch, selectedBrand,sortOrder]);
 
+ 
   const enumBrand = ["Adidas","Nike","Puma","Reebok","Charly","Vans","Panam","Otras"];
+
+  const handleBrandChange = (e) => {
+    setSelectedBrand(e.target.value);
+  };
+
+  const handleSortChange = (e) => {
+    setSortOrder(e.target.value);
+  };
+
+
   return (
     <>
     <Layout>
@@ -31,23 +49,36 @@ const Products = () => {
                 
                 <h2 class="text-4xl mb-7 font-bold dark:text-white">El mejor calzado urbano</h2>
                 <div className="flex justify-between items-center bg-white p-4">
-                  <select  className="text-white bg-[#050708] hover:bg-[#050708]/80   font-medium block text-lg px-5 py-2.5 dark:hover:bg-[#050708]/40 dark:focus:ring-gray-600 me-2 mb-7">
-                    <option disabled selected >Fitro por marca</option>
-                    {enumBrand.map((brand)=>(
-                      <option>{brand}</option>
+                <select
+                    className="text-white bg-[#050708] hover:bg-[#050708]/80 font-medium block text-lg px-5 py-2.5 dark:hover:bg-[#050708]/40 me-2 mb-7"
+                    onChange={handleBrandChange}
+                    value={selectedBrand}
+                  >
+                    <option value="">Filtro por marca</option>
+                    {enumBrand.map((brand) => (
+                      <option key={brand} value={brand}>
+                        {brand}
+                      </option>
                     ))}
                   </select>
                   {/* <button className="text-white bg-[#050708] hover:bg-[#050708]/80   font-medium block text-lg px-5 py-2.5 text-center dark:hover:bg-[#050708]/40 dark:focus:ring-gray-600 me-2 mb-7">Filtro</button> */}
 
-                  <p className="text-gray-500">n productos</p>
-                  <select className="border border-gray-300 text-gray-700 py-2 px-3 ">
-                    <option>Ordenar</option>
-                    <option>Precio: Menor a Mayor</option>
-                    <option>Precio: Mayor a Menor</option>
+                  <p className="font-medium text-dark-600 dark:text -500">Total Productos: {total}</p>
+                  
+                  <select
+                    className="border border-gray-300 text-gray-700 py-2 px-3"
+                    onChange={handleSortChange}
+                  >
+                    <option value="">Ordenar</option>
+                    <option value="asc">Precio: Menor a Mayor</option>
+                    <option value="desc">Precio: Mayor a Menor</option>
                   </select>
+
                 </div>
                 <div className="flex flex-wrap -m-4">
-                  {products.map((product) => (
+                  {/* {products.map((product) =>( */}
+                  {/* {products.map((product) => ( */}
+                  {Array.isArray(products) && products.map((product) => (
                     <div className="p-4 lg:w-1/4 md:w-1/2" key={product.id}>
                       <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                         <Link to={`/products/${product._id}`} className="group block">

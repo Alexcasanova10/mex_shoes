@@ -11,20 +11,37 @@ import {
 
 import {BASE_URL} from "../Constants/BASE_URL"
 
-export const productListAction = () => async (dispatch) => {
+// export const productListAction = () => async (dispatch) => {
+//     try {
+//         dispatch({ type: PRODUCT_LIST_REQ });
+//         const { data } = await axios.get(`${BASE_URL}/api/products`);
+//         console.log(data);
+//         dispatch({ type: PRODUCT_LIST_REQ_SUCCESS, payload: data })
+//     } catch (error) {
+//         dispatch({
+//             type: PRODUCT_LIST_REQ_FAIL,
+//             payload: error.response && error.response.data.message ? error.response.data.message : error.message
+//         })
+//     }    
+// } //productionListAction anterior
+
+export const productListAction = (brand = "", sort="") => async (dispatch) => {
     try {
-        dispatch({ type: PRODUCT_LIST_REQ });
-        const { data } = await axios.get(`${BASE_URL}/api/products`);
-        console.log(data);
-        dispatch({ type: PRODUCT_LIST_REQ_SUCCESS, payload: data })
+      dispatch({ type: PRODUCT_LIST_REQ });
+      const { data } = await axios.get(
+        // `${BASE_URL}/api/products${brand ? `/brand/${brand}` : ""}`
+        `${BASE_URL}/api/products${brand ? `/brand/${brand}` : ""}?sort=${sort}`
+      );
+      dispatch({ type: PRODUCT_LIST_REQ_SUCCESS, payload: data });
     } catch (error) {
-        dispatch({
-            type: PRODUCT_LIST_REQ_FAIL,
-            payload: error.response && error.response.data.message ? error.response.data.message : error.message
-        })
+      dispatch({
+        type: PRODUCT_LIST_REQ_FAIL,
+        payload: error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+      });
     }
-    
-}
+};
 
 
 

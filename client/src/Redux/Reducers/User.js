@@ -51,10 +51,29 @@ export const userRegisterReducer = (state = {}, action) => {
 }
 
 
-export const userProfileReducer = (state = { user: {} }, action) => {
+// export const userProfileReducer = (state = { user: {} }, action) => {
+//     switch (action.type) {
+//         case USER_PROFILE_REQUEST:
+//             return { loading: true, ...state };
+//         case USER_PROFILE_SUCCESS:
+//             return { loading: false, user: action.payload };
+//         case USER_PROFILE_FAIL:
+//             return { loading: false, error: action.payload };
+//         default:
+//             return state;
+//     }
+// }; old
+
+const initialState = {
+    loading: false,
+    user: null,
+    error: null
+};
+
+export const userProfileReducer = (state = initialState, action) => {
     switch (action.type) {
         case USER_PROFILE_REQUEST:
-            return { loading: true, ...state };
+            return { ...state, loading: true };
         case USER_PROFILE_SUCCESS:
             return { loading: false, user: action.payload };
         case USER_PROFILE_FAIL:
@@ -63,3 +82,4 @@ export const userProfileReducer = (state = { user: {} }, action) => {
             return state;
     }
 };
+

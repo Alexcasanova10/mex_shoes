@@ -56,8 +56,11 @@ require('dotenv').config();
 
 //token recuperacion contraseña
 userRoute.post('/reset/:token', AsyncHandler(async (req, res) => {
+  const { token } = req.params;
+  const { password } = req.body;
+
   const user = await User.findOne({
-      resetPasswordToken: req.params.token,
+      resetPasswordToken: token,
       resetPasswordExpires: { $gt: Date.now() }
   });
 
@@ -66,15 +69,15 @@ userRoute.post('/reset/:token', AsyncHandler(async (req, res) => {
       throw new Error('Token inválido o expirado');
   }
 
-  user.password = await bcrypt.hash(req.body.password, 10);
+  // user.password = await bcrypt.hash(password, 10);
+  user.password = password;
   user.resetPasswordToken = undefined;
   user.resetPasswordExpires = undefined;
   await user.save();
 
   res.json({ 
-      message: 'Contraseña actualizada',
-      password:  user.password
-  });
+      message: 'Contraseña actualizada'
+   });
 })); 
 
 
@@ -131,7 +134,7 @@ userRoute.post("/register",
     const { name, email, password } = req.body;
     const existUser = await User.findOne({ email });
     if (existUser) {
-      res.status(400);
+      res.status(400);  
       throw new Error("User Already exist");
     } else {
       const user = await User.create({
@@ -174,6 +177,7 @@ userRoute.get("/profile",protect,AsyncHandler(async (req, res) => {
   })
 );
 
+
 //user profile update
 userRoute.put("/profile",protect,AsyncHandler(async (req, res) => {
     const user = await User.findById(req.user._id);
@@ -190,7 +194,7 @@ userRoute.put("/profile",protect,AsyncHandler(async (req, res) => {
         name: updatedUser.name,
         email: updatedUser.email,
         isAdmin: updatedUser.isAdmin,
-        createdAt: updatedUser.createdAt,
+        // createdAt: updatedUser.createdAt,
         token:generateToken(updatedUser._id)
       });
 

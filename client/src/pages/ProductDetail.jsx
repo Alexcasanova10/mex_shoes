@@ -22,7 +22,12 @@ function ProductDetail() {
   const [selectedSize, setSelectedSize] = useState(null);
 
   const addToCartHandler = () => {
-    dispatch(addToCartAction(id, qty));
+    if(!selectedSize){
+      alert('Favor de seleccionar una talla');
+      return 
+    }
+
+    dispatch(addToCartAction(id, qty, selectedSize));
   }
    
 
@@ -70,7 +75,7 @@ function ProductDetail() {
                           {size}
                         </button>
                       ))}
-                    </div>
+                  </div>
                    
                   </div>
                   

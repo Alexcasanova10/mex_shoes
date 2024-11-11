@@ -34,6 +34,7 @@ export const userLoginAction = (email, password) => async (dispatch)=>{
 
 
     } catch (error) {
+        alert("Usuario incorrecto o contraseña incorrectos")
         dispatch({
             type: USER_LOGIN_REQ_FAIL,
             payload: error.response.data.message
@@ -66,15 +67,6 @@ export const userLoginActionGoogle = () => async (dispatch)=>{
     }
 }
 
-
-
-
-
-
-
-
-
-
 //user logout action 
 export const userLogoutAction = () => async (dispatch) => {
     localStorage.removeItem("userInfo");
@@ -93,9 +85,7 @@ export const userRegisterAction = (name, email, password) => async (dispatch) =>
             }
         }
 
-
-        const { data } = await axios.post(`${BASE_URL}/api/users`, { name, email, password }, config);
-
+        const { data } = await axios.post(`${BASE_URL}/api/users/register`, { name, email, password }, config);
         dispatch({ type: USER_REGISTER_REQ_SUCCESS, payload: data });
         dispatch({ type: USER_LOGIN_REQ_SUCCESS, payload: data });
         localStorage.setItem("userInfo", JSON.stringify(data))
@@ -115,16 +105,19 @@ estas dos de abajo pdtes de modficarlas pa q jalen la info
 //jala toda la info de perfil..usar esta eigual para el perfil info update en la vista de perfil    
 export const userProfileAction = () => async (dispatch, getState) => {
     try {
-        dispatch({ type: USER_PROFILE_REQ });
+        dispatch({ type: USER_PROFILE_REQUEST });
 
         const { userLogin: { userInfo } } = getState();
+
+        const token = userInfo?.token;
+        console.log("Token:", token); // <-- Esto mostrará el token en la consola del navegador para depuración
+
+
         const config = {
             headers: {
-                Authorization: `Bearer ${userInfo.token}`,
-            },
+                Authorization: `Bearer ${userInfo.token}`
+            }
         };
-        console.log("Config headers:", config);
-
 
         const { data } = await axios.get(`${BASE_URL}/api/users/profile`, config);
 
@@ -132,9 +125,7 @@ export const userProfileAction = () => async (dispatch, getState) => {
     } catch (error) {
         dispatch({
             type: USER_PROFILE_FAIL,
-            payload: error.response && error.response.data.message 
-                      ? error.response.data.message 
-                      : error.message,
+            payload: error.response && error.response.data.message ? error.response.data.message : error.message,
         });
     }
 };
@@ -166,5 +157,53 @@ export const getUserProfile = () => async (dispatch, getState) => {
                 ? error.response.data.message 
                 : error.message,
         });
+    }
+};
+
+export const updateUserProfileAction = (profileData) => async (dispatch, getState) => {
+    try {
+        const { userLogin: { userInfo } } = getState();
+
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${userInfo.token}`
+            }
+        };
+
+        const { data } = await axios.put(`${BASE_URL}/api/users/profile`, profileData, config);
+
+        dispatch({ type: USER_PROFILE_SUCCESS, payload: data });
+        localStorage.setItem("userInfo", JSON.stringify(data));
+
+    } catch (error) {
+        dispatch({
+            type: USER_PROFILE_FAIL,
+            payload: error.response && error.response.data.message
+                ? error.response.data.message
+                : error.message,
+        });
+    }
+};
+
+
+
+
+export const userPasswordResetAction = (email) => async (dispatch) => {
+    try {
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+            },
+        };
+
+        const { data } = await axios.post(`${BASE_URL}/api/users/recuperar`, { email }, config);
+
+        alert("Correo de recuperación enviado. Verifica tu bandeja de entrada.");
+
+        window.location.href = `/reset`;
+    } catch (error) {
+        console.error(error);
+        alert("Error al enviar el correo. Por favor, verifica tu dirección.");
     }
 };

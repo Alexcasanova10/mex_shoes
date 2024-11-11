@@ -1,32 +1,33 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import Layout from "../../Layouts/Layouts";
-import { userLoginAction } from "../../Redux/Actions/User";
 import { useState } from "react";
+import { userPasswordResetAction } from "../../Redux/Actions/User.js";
+
 
 export default function Recuperar() {
   const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
-  const userLoginReducer = useSelector((state) => state.userLoginReducer);
+   const dispatch = useDispatch();
 
-  const { loading, error } = userLoginReducer;
-  const dispatch = useDispatch();
-
-  const submitHandler = (e) => {
+   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(userLoginAction(email, password));
-  };
+
+    if (!email) {
+        alert("Por favor, ingresa un correo electrónico.");
+        return;
+    }
+    
+    // Llama a la acción para enviar el correo de recuperación
+    dispatch(userPasswordResetAction(email));
+};
+ 
 
 //   meterle la logica con la api pa q jale el recuperar contrasñea!!
   return (
     <>
       <Layout>
-        {loading ? (
-          <h1>loading</h1>
-        ) : error ? (
-          <h1>{error}</h1>
-        ) : (
+
           <>
-      <form className="max-w-sm mt-14 mb-10 mx-auto h-5/6" onSubmit={submitHandler}>
+       <form className="max-w-sm mt-14 mb-10 mx-auto h-5/6"  onSubmit={handleSubmit}>
           <h1 class="text-3xl mb-7  dark:text-white">Recuperar tu cuenta</h1>
           <p class="text-2xl mb-7 font-thin text-gray-900 dark:text-white">Ingresa tu correo electrónico para obtener un token de recuperación.</p> 
               <div className="mb-5">
@@ -47,8 +48,7 @@ export default function Recuperar() {
 
             </form>
           </>
-        )}
-      </Layout>
+       </Layout>
     </>
   );
 }

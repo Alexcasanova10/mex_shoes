@@ -85,14 +85,16 @@ export default function Checkout({ open, setOpen }) {
                   <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                     <p>
                       
-                      <button
+                        <Link className="font-medium text-dark-600 dark:text -500 hover:underline" to ="/products">
+                          Continua Comprando
+                        </Link>
+                      {/* <button
                         type="button"
                         onClick={() => setOpen(false)}
                         className="font-medium text-dark-600 dark:text -500 hover:underline"
                       >
-                        Continua Comprando
                         <span aria-hidden="true"> &rarr;</span>
-                      </button>
+                      </button> */}
                     </p>
                   </div>
                 </div>

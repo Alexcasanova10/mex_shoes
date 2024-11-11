@@ -66,34 +66,36 @@ laindin page // done
 perfil de usuariio// poner datos de cuent y guardar direccion de envio y nombre apellido correo// done
 --------------------------------------------------------------------
 realiza del backend
-google login y sus vistas
-alertas de flasa credencales login 
+alertas de flasa credencales login  // done
+unmeros de productos //done
+fitlros de tienda //done
+agrgar tallas a la compra //done
+register  // done
+
+reset passwrd
 
 
-
-
-fitlros de tienda y paginacion y unmeros de productos
-perfil de user modficiar
-paypal y sus vistas
-admin crudss de productos, listad de pedidos.listado de lcinets
+admin crudss de productos, listad de pedidos.listado de lcinets hacer rutas y vista de dashboard
 admin iot modulo
-email compro exitosa
-agrgar tallas a la compra 
 vsitas admin (crid de producto, listado pedidos, listado clientes, moduloIOT).
-------------------------------------------------
+
+paypal y sus vistas y el proceos de compra final.
+correo de confirmacion de compra con nombre,fecha de comra.talla,precio addres de devnio idde prod nombre cliente imagen 
+
+perfil de user modficiar y poner eso q se pide o update
+google login y sus vista
+
+----------------------------------------------------------
 meter datos precargads BIEN hehcos
 testing de compras  que funcioenn correctamente
 -----------------------------------------------
 subit a vercel o subir a dominio y server propio
 y camibar rutas dentro de codigo
 ------------------------------------------------
-hacer diagram lofico
-doc iee380
-doc de presentacion de proyecto
-doc de diagama logico
-
+hacer diagram lofico lo hago yo 
+doc iee380 lohace axel
+doc de presentacion de proyecto power point lo hace beto
 ----------------------------
-
 planes cunado aacabe e l proyecto
 ir a barranca con los del proeycto
 ircotorrear conjarod

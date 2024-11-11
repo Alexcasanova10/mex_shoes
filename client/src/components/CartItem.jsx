@@ -28,7 +28,7 @@ export default function CartItem({ cartItems }) {
                     className="h-full w-full object-cover object-center"
                   />
                 </div>
-
+                
                 <div className="ml-4 flex flex-1 flex-col">
                   <div>
                     <div className="flex justify-between text-base font-medium text-gray-900">
@@ -37,6 +37,10 @@ export default function CartItem({ cartItems }) {
                       </h3>
                       <p className="ml-4">${product.price}</p>
                     </div>
+
+                    <p className="text-sm text-gray-500">Talla: {product.sizes}</p>
+
+
                   </div>
                   <div className="flex flex-1 items-end justify-between text-sm">
                     <p className="text-gray-500">
@@ -58,6 +62,7 @@ export default function CartItem({ cartItems }) {
                         ))}
                       </select>
                     </p>
+                    
 
                     <div className="flex">
                       <button

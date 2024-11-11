@@ -10,7 +10,7 @@ import {
 } from "../Constants/Product"
 
 //list of products
-export const productListReducer = (state = { products: [] }, action) => {
+export const productListReducer = (state = { products: [], total: 0 }, action) => {
     switch (action.type) {
         case PRODUCT_LIST_REQ:
             return {
@@ -19,7 +19,11 @@ export const productListReducer = (state = { products: [] }, action) => {
             };
         case PRODUCT_LIST_REQ_SUCCESS:
             return {
-                loading:false, products: action.payload, totalPage: action.payload.totalPage, page:action.payload.page
+                loading:false, 
+                products: action.payload.products, 
+                totalPage: action.payload.totalPage, 
+                page:action.payload.page, 
+                total: action.payload.total//agregue esta linea 
             }
         case PRODUCT_LIST_REQ_FAIL:
             return { loading: false, error: action.payload.error }

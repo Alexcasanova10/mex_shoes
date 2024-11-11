@@ -13,22 +13,31 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+
+    resetPasswordToken:{type: String},
+    resetPasswordExpires: {type: Date}
   },
   { timestamps: true }
 );
 
 //validate password match or not
 userSchema.methods.matchPassword = async function (enterPassword) {
-  return await bcrypt.compare(enterPassword, this.password);
+
+  const isMatch = await bcrypt.compare(enterPassword, this.password)
+  console.log("Comparando contraseñas:", enterPassword, this.password, isMatch);
+
+  return isMatch;
+
 };
 
 //register passwrod hash and store
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) {
-    next();
+    return next();
   }
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
+  next()
 });
 
 module.exports = mongoose.model("User", userSchema);

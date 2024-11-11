@@ -13,6 +13,7 @@ export default function Login() {
   const userLoginReducer = useSelector((state) => state.userLoginReducer);
 
   const { loading, error } = userLoginReducer;
+  
   const dispatch = useDispatch();
 
   const submitHandler = (e) => {
@@ -30,7 +31,7 @@ export default function Login() {
       console.error("Error al iniciar sesión con Google:", error);
     }
 
-    // dispatch(userLoginActionGoogle());
+    dispatch(userLoginActionGoogle());
   };
 
 

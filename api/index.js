@@ -62,10 +62,11 @@ app.get('/auth/google/callback',
     const token = jwt.sign({ id: req.user._id }, process.env.JWT_SECRET, {
       expiresIn: "30d",
     });
-    req.session.token = token;
+    // req.session.token = token;
+    res.redirect(`${process.env.FRONTEND_URL}/login-success?token=${token}`);
 
     // res.redirect('/api/users/profile');
-    // res.redirect('/api/users/profile');
+
 
   }
 );

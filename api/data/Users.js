@@ -18,14 +18,6 @@ const users = [
     email: "cliente@gmail.com",
     password: "clientazochido",
   },
-  
-  // { ejemplo de last name en user 
-  //   name: "User",
-  //   last_name: "last name owo",
-  //   email: "user@node.com",
-  //   password: bcrypt.hashSync("123456", 10),
-  // },
-
 
 ];
 

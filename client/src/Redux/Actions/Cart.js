@@ -10,7 +10,7 @@ import {
 import { BASE_URL } from "../Constants/BASE_URL";
 
 
-export const addToCartAction = (id, qty) => async (dispatch, getState) => {
+export const addToCartAction = (id, qty, selectedSize) => async (dispatch, getState) => {
     try { 
         const { data } = await axios.get(`${BASE_URL}/api/products/${id}`)
         dispatch({
@@ -21,6 +21,7 @@ export const addToCartAction = (id, qty) => async (dispatch, getState) => {
                 image: data.image,
                 price: data.price,
                 countInStock: data.countInStock,
+                sizes: selectedSize, // Aquí agregamos la talla seleccionada
                 qty
             }
         })
