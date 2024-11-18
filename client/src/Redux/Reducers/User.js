@@ -31,10 +31,7 @@ export const userLoginReducer = (state = {}, action) => {
             return state
     }
 }
-
 //user REgister
-
-
 export const userRegisterReducer = (state = {}, action) => {
     switch (action.type) {
         case USER_REGISTER_REQ:
@@ -82,4 +79,7 @@ export const userProfileReducer = (state = initialState, action) => {
             return state;
     }
 };
+
+
+
 

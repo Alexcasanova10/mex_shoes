@@ -25,19 +25,15 @@ import PlaceOrder from "./pages/Client/PlaceOrder";
 import OrderConfirmation from "./pages/Client/OrderConfirm";
 import { OrderHistory } from "./pages/Client/OrderHistory";
 
+
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+// import { userLoginActionGoogle } from "./Redux/Actions/User";
+
 function App() {
 
   const userLoginReducer = useSelector((state) => state.userLoginReducer)
   const {userInfo} = userLoginReducer
-  
-
-  // useEffect(() => {
-  //   if (userInfo) {
-  //     window.location.href = "/";
-  //   }
-  // }, [userInfo]);
-
-
   
   return (
     <>
@@ -54,7 +50,7 @@ function App() {
           <Route
             exact
             path="/"
-            element={userInfo ? <Navigate to="/"></Navigate> : <Login />}
+            element={userInfo? <Navigate to="/"></Navigate> : <Login />}
           ></Route>
 
 

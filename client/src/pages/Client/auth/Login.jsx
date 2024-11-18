@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import Layout from "../../../Layouts/Layouts";
-import { userLoginAction, userLoginActionGoogle } from "../../../Redux/Actions/User";
+import { userLoginAction } from "../../../Redux/Actions/User";
 
 
 import { BASE_URL } from "../../../Redux/Constants/BASE_URL";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Login() {
   const [email, setEmail] = useState(null);
@@ -21,28 +21,13 @@ export default function Login() {
     dispatch(userLoginAction(email, password));
   };
 
-  const submitHandlerGoogle = (e) => {
-    e.preventDefault();
-
-    try {
-      // Redirige al usuario al endpoint de Google para la autenticación
-      window.location.href = `${BASE_URL}/auth/google`;
-    } catch (error) {
-      console.error("Error al iniciar sesión con Google:", error);
-    }
-
-    dispatch(userLoginActionGoogle());
-  };
+  
 
 
   return (
     <>
       <Layout>
-        {/* {loading ? (
-          <h1>loading</h1>
-        ) : error ? (
-          <h1>{error}</h1>
-        ) : ( */}
+    
           <>
             <form className="max-w-sm mt-14 mb-10 mx-auto h-5/6" onSubmit={submitHandler}>
           <h1 class="text-3xl mb-7  dark:text-white">Inicio de Sesión</h1>
@@ -79,7 +64,7 @@ export default function Login() {
 
             </form>
 
-            <form className="max-w-sm mt-10 mb-10 mx-auto h-5/6" onSubmit={submitHandlerGoogle}>
+            <form className="max-w-sm mt-10 mb-10 mx-auto h-5/6" >
               <button type="submit" class="text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 font-medium block w-full text-lg px-5 py-2.5 text-center inline-flex justify-center items-center dark:focus:ring-gray-300 mb-2">
                 <svg class="w-5 h-5 mr-2" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
                   <path fill="#4285F4" d="M488 261.8c0-17.8-1.5-35.6-4.7-52.9H250.2v99.8h134.5c-5.8 30.2-23.1 55.8-49 73.2v60.8h79.2c46.2-42.6 73.1-105.5 73.1-180.9z"></path>
@@ -92,8 +77,8 @@ export default function Login() {
             </form>
 
           </>
-        {/* )} */}
-      </Layout>
+       </Layout>
     </>
   );
 }
+   

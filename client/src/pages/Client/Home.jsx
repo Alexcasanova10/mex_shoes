@@ -30,7 +30,7 @@ const Home =  () => {
           <h1 class="text-3xl mb-7 text-center dark:text-white">Productos destacados</h1>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-             <Link to="/products/672c6234e1ef7fd809030d0a" className="group block">
+             <Link to="/products/6738523b56f60447f2e29d03" className="group block">
               <div className="bg-white shadow-lg rounded-lg p-6">
                 <img
                   className="h-64 w-full object-cover mb-4 rounded"
@@ -42,7 +42,7 @@ const Home =  () => {
                 
               </div>
             </Link>
-             <Link to="/products/672c6234e1ef7fd809030d10" className="group block">
+             <Link to="/products/6738523b56f60447f2e29d09" className="group block">
               <div className="bg-white shadow-lg rounded-lg p-6">
                 <img
                   className="h-64 w-full object-cover mb-4 rounded"
@@ -54,7 +54,7 @@ const Home =  () => {
                 
               </div>
             </Link>
-             <Link to="/products/672c6234e1ef7fd809030d11" className="group block">
+             <Link to="/products/6738523b56f60447f2e29d0a" className="group block">
               <div className="bg-white shadow-lg rounded-lg p-6">
                 <img
                   className="h-64 w-full object-cover mb-4 rounded"

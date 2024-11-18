@@ -40,8 +40,7 @@ require('dotenv').config();
       }
   }) 
 
-  // Configurar y enviar correo electrónico
-  let nombre = user.name;
+   let nombre = user.name;
   const mailOptions = {
       to: user.email,
       from: '2123300393@soy.utj.edu.mx',
@@ -115,6 +114,8 @@ userRoute.post("/login",
   })
 );
 
+ 
+
 
 //logout
 userRoute.post('/logout', (req, res) => {
@@ -167,7 +168,9 @@ userRoute.get("/profile",protect,AsyncHandler(async (req, res) => {
         _id: user._id,
         name: user.name,
         email: user.email,
+        password: user.password,
         isAdmin: user.isAdmin,
+        last_name: user.last_name,
         createdAt: user.createdAt,
       });
     } else {

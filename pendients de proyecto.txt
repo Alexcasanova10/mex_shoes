@@ -87,29 +87,24 @@ middelware de admin (middleware NO permtie q uno pase a menos q este autnetifica
 paypal y sus vistas y el proceos de compra final.//done
 -correo de confirmacion de compra con nombre,fecha de comra,precio addres de devnio idde prod nombre cliente imagen
 -mejorar la vista de compra realiazda.. y que redirija //done
+-perfil de user modficiar y poner eso q se pide o update // done
 
+-moverle al menu principal para q tengan sentido las rutas //done
 
+-definir lógica de tallas de la compra a mano, como hacer en la compra, cmo hacer en bd basarme en adidas) y aplicarla en bd y en el cliente end y hacer  codigo para que actualice stock de tallas cada vez q se hace una compra y piner la talla en la compra en sitio web y en el corroe 
 
--api de gooogle que me perimte iniciar sesión con el loclastorage (quiero q al hacr Google me devuelva al inicio con el nombre)
-poner el nombre en el botn azul de navbar de cliente
+-meter datos precargads BIEN hehcos
 
-
-
-
-
--definir lógica de tallas de la compra a mano, como hacer en la compra, cmo hacer en bd basarme en adidas) y aplicarla en bd y en el cliente end y hacer  codigo para que actualice stock de tallas cada vez q se hace una compra 
 
 -enicrpar las rutas de llamdas de API: Simplemente encir´ptar al enviar la info (req) y al res se desencripta(res), todo esto sucee en postman y no se muestra nad de eso en front
 
--perfil de user modficiar y poner eso q se pide o update //CHANCE QUITARLO ALV
---------------------------------------------------------------------------------------------------------------------------------
--meter datos precargads BIEN hehcos
+-api de gooogle que me perimte iniciar sesión con el loclastorage (quiero q al hacr Google me devuelva al inicio con el nombre)
+poner el nombre en el botn azul de navbar de cliente, baiscamnente una sesión con google
 
 -testing de todo que funcioenn correctamente
--Guardar en github
+--------------------------------------------------------------------------------------------------------------------------------
 -hacer certficado SSL
--cahnce subir a vercel
-
+-chance subir a vercel
 -testar la bd de Axel y si si jala moverle ahí }}
 -----------------------------------------------------------------------------------------------
 hacer diagram lofico lo hago yo 

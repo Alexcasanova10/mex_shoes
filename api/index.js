@@ -54,23 +54,23 @@ app.get('/auth/google',
 );
 
 //rutas google auth
-app.get('/auth/google/callback', 
-  passport.authenticate('google', { 
-      failureRedirect: '/login' 
-  }), 
+app.get('/auth/google/callback',
+  passport.authenticate('google', { failureRedirect: '/login' }),
   (req, res) => {
-    
     const token = jwt.sign({ id: req.user._id }, process.env.JWT_SECRET, {
-      expiresIn: "30d",
+      expiresIn: '30d',
     });
-    // req.session.token = token;
-    // res.redirect(`${process.env.FRONTEND_URL}/login-success?token=${token}`);
 
-    // res.redirect('/api/users/profile');
-
-
+    res.json({
+      token:token
+    })
+    // Redirige al frontend con el token
+    // res.redirect(`${process.env.FRONTEND_URL}/?token=${token}`);
+    res.redirect(`${process.env.FRONTEND_URL}/`);
+    
   }
 );
+
 
 //database seeder routes
 app.use("/api/seed", databaseSeeder);
