@@ -1,7 +1,7 @@
 // src/pages/NotFound.jsx
 import React from 'react';
 import { Link } from "react-router-dom";
-import Layout from "../Layouts/Layouts";
+import Layout from "../../Layouts/Layouts";
 
 const NotFound = () => {
   return (

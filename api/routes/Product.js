@@ -16,15 +16,30 @@ productRoute.get(
   })
 );  
 
+// productRoute.get(
+//   "/",
+//   asyncHandler(async (req, res) => {
+//     const { sort } = req.query;
+//     const sortOrder = sort === "desc" ? -1 : 1; 
+
+//     // Obtener los productos ordenados según el parámetro sort
+//     const products = await Product.find({}).sort({ price: sortOrder });
+//     const totalProducts = await Product.countDocuments();
+
+//     res.json({ products, total: totalProducts });
+//   })
+// );
 productRoute.get(
   "/",
   asyncHandler(async (req, res) => {
     const { sort } = req.query;
     const sortOrder = sort === "desc" ? -1 : 1; 
 
-    // Obtener los productos ordenados según el parámetro sort
-    const products = await Product.find({}).sort({ price: sortOrder });
-    const totalProducts = await Product.countDocuments();
+    // Obtener solo los productos cuyo status_Activa es true
+
+    const products = await Product.find({ status_Active: true }).sort({ price: sortOrder });
+        
+    const totalProducts = await Product.countDocuments({ status_Active: true });
 
     res.json({ products, total: totalProducts });
   })

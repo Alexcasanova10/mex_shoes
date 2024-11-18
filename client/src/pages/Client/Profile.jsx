@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Layout from "../Layouts/Layouts";
-import CoverPic from '../assets/images/bg-profile.jpg';
-import { userProfileAction, updateUserProfileAction } from "../Redux/Actions/User";
+import Layout from "../../Layouts/Layouts";
+import CoverPic from '../../assets/images/bg-profile.jpg';
+import { userProfileAction, updateUserProfileAction } from "../../Redux/Actions/User";
 
 const Profile = () => {
     // const dispatch = useDispatch();

@@ -10,7 +10,7 @@ import {
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import {  useSelector } from "react-redux";
 import {Link} from "react-router-dom"
-import CartItem from "../components/CartItem";
+import CartItem from "../../components/CartItem";
 
 export default function Checkout({ open, setOpen }) {
   

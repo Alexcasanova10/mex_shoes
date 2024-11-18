@@ -1,18 +1,16 @@
 import { useDispatch, useSelector } from "react-redux";
-import Layout from "../Layouts/Layouts";
-import CartItem from "../components/CartItem";
+import Layout from "../../Layouts/Layouts";
+import CartItem from "../../components/CartItem";
 import { useEffect, useState } from "react";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import axios from "axios";
-import { BASE_URL } from "../Redux/Constants/BASE_URL";
+import { BASE_URL } from "../../Redux/Constants/BASE_URL";
 
-import { orderAction, orderPaymentAction } from "../Redux/Actions/Order";
-import { saveShippingAddressAction } from "../Redux/Actions/Cart";
-import { ORDER_RESET } from "../Redux/Constants/Order";
+import { orderAction, orderPaymentAction } from "../../Redux/Actions/Order";
+import { saveShippingAddressAction } from "../../Redux/Actions/Cart";
+import { ORDER_RESET } from "../../Redux/Constants/Order";
 import { useNavigate } from "react-router-dom";
-import CoverPic from '../assets/images/bg-checkout.jpg';
-
-
+import CoverPic from '../../assets/images/bg-checkout.jpg';
 
 export default function PlaceOrder() {
   const cart = useSelector((state) => state.cartReducer);
@@ -230,9 +228,13 @@ export default function PlaceOrder() {
                   className=" mb-10 bg-[#050708] text-white py-2 px-4 hover:bg-[#050708]/80 transition duration-200"
                 >
                   Guarda direción de envío
-                </button>
+                </button> 
 
                 {clientId && (
+                // <PayPalScriptProvider options={{ clientId: "test"}}>
+                //     <PayPalButtons
+                //     />
+                //   </PayPalScriptProvider>
                   <PayPalScriptProvider options={{ clientId: clientId }}>
                     <PayPalButtons
                       createOrder={(data, actions) => {
@@ -241,6 +243,7 @@ export default function PlaceOrder() {
                             {
                               amount: {
                                 currency_code: "USD",
+                                // currency_code: "MXN",
                                 value: total,
                               },
                             },

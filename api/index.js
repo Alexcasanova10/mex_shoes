@@ -37,6 +37,7 @@ const databaseSeeder = require("./databaseSeeder");
 const userRoute = require("./routes/User");
 const productRoute = require("./routes/Product");
 const orderRoute = require("./routes/Order");
+const adminRoute = require("./routes/Admin");
 
 app.use(express.json())
 
@@ -63,7 +64,7 @@ app.get('/auth/google/callback',
       expiresIn: "30d",
     });
     // req.session.token = token;
-    res.redirect(`${process.env.FRONTEND_URL}/login-success?token=${token}`);
+    // res.redirect(`${process.env.FRONTEND_URL}/login-success?token=${token}`);
 
     // res.redirect('/api/users/profile');
 
@@ -82,6 +83,9 @@ app.use("/api/products", productRoute);
 
 //routes for orders
 app.use("/api/orders", orderRoute);
+
+//routes for orders
+app.use("/api/admin", adminRoute);
 
 // paypal payment api for client key;
 app.use("/api/config/paypal", (req, res) => {

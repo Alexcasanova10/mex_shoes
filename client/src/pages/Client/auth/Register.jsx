@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Layout from "../../Layouts/Layouts";
+import Layout from "../../../Layouts/Layouts";
 import { useDispatch, useSelector } from "react-redux";
-import { userRegisterAction } from "../../Redux/Actions/User";
+import { userRegisterAction } from "../../../Redux/Actions/User";
 
 export default function Register() {
   const [email, setEmail] = useState(null);

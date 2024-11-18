@@ -3,6 +3,8 @@ const orderRoute = express.Router();
 const protect = require("../middleware/Auth");
 const asyncHandler = require("express-async-handler");
 const Order = require("../models/Order");
+const nodemailer = require('nodemailer')
+const User = require("../models/User.js");
 
 orderRoute.post("/",protect, asyncHandler(async (req, res) => {
     const {
@@ -31,22 +33,71 @@ orderRoute.post("/",protect, asyncHandler(async (req, res) => {
         user: req.user._id,
       });
 
-      // const newOrder =  new UserOrder({
-      //   userId: '1',
-      //   customerId: '1',
-      //   productId: '652b2e458077fd5b243a06ad',
-      //   quantity: 1,
-      //   subtotal: 12 / 100,
-      //   total: 12 / 100,
-      //   payment_status: '3',
-      // });
-
       const createdOrder = await order.save();
-      res.status(201).json(createdOrder);
-    }
-  })
+
+      const transporter= nodemailer.createTransport({
+        service: 'Gmail',
+        auth:{
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS
+        }
+    }) 
+
+    const userEmail = req.user.email;
+
+    const orderDetails = orderItems
+    .map(
+      (item) =>
+        `- ${item.name} (Cantidad: ${item.qty}, Precio: $${item.price.toFixed(
+          2
+        )})`
+    )
+    .join("\n");
+
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: userEmail,
+      subject: `MexShoes: ¡Compra Exitosa! - ID de Orden: ${createdOrder._id}`,
+      text: `
+      Hola ${req.user.name},
+
+      ¡Gracias por tu compra! Aquí están los detalles de tu pedido:
+
+      **Productos Comprados:**
+      ${orderDetails}
+
+      **Total Pagado:** $${totalPrice}
+
+      **Método de Pago:** Paypal
+
+      **Dirección de Envío:**
+      - Dirección: ${shippingAddress.address}
+      - Ciudad: ${shippingAddress.city}
+      - Código Postal: ${shippingAddress.postalCode}
+      - País: ${shippingAddress.country}
+
+      Gracias por confiar en nosotros.
+      `,
+    };
+
+    res.status(201).json(createdOrder);
+    
+    await transporter.sendMail(mailOptions);
+     
+    
+  }
+})
 );
 
+// const newOrder =  new UserOrder({
+//   userId: '1',
+//   customerId: '1',
+//   productId: '652b2e458077fd5b243a06ad',
+//   quantity: 1,
+//   subtotal: 12 / 100,
+//   total: 12 / 100,
+//   payment_status: '3',
+// });
 //order detail
 
 orderRoute.get(

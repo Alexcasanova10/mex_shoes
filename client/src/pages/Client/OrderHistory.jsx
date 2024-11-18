@@ -1,12 +1,11 @@
 import { useEffect } from "react";
-import Layout from "../Layouts/Layouts";
-import CoverPic from '../assets/images/bg-shipments.jpg';
-
+import Layout from "../../Layouts/Layouts";
+import CoverPic from '../../assets/images/bg-shipments.jpg';
 import { useDispatch, useSelector } from "react-redux";
-import { orderListAction } from "../Redux/Actions/Order";
+import { orderListAction } from "../../Redux/Actions/Order";
 
 import moment from "moment";
-import {Loading} from "../components/Loading"
+import {Loading} from "../../components/Loading"
 
 export function OrderHistory() {
   const dispatch = useDispatch();
@@ -43,7 +42,7 @@ export function OrderHistory() {
                     Historial de compras
                   </h2> */}
  
-                  <div className="mt-6 gap-4 space-y-4 sm:mt-0 sm:flex sm:items-center sm:justify-end sm:space-y-0">
+                  {/* <div className="mt-6 gap-4 space-y-4 sm:mt-0 sm:flex sm:items-center sm:justify-end sm:space-y-0">
                     <div>
                       <label
                         htmlFor="order-type"
@@ -86,7 +85,7 @@ export function OrderHistory() {
                         <option value="this year">Este año</option>
                       </select>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
 
                 <div className="mt-6 flow-root sm:mt-8">
@@ -102,7 +101,7 @@ export function OrderHistory() {
                               ID de orden:
                             </dt>
                             <dd className="mt-1.5 text-base font-semibold text-gray-900 dark:text-white">
-                              <a href="#" className="hover:underline">
+                              <a href={`/order/${order._id}`} className="hover:underline">
                                 #{order._id}
                               </a>
                             </dd>

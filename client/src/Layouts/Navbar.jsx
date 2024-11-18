@@ -3,7 +3,8 @@ import { UserDropdown } from "../components/Dropdown";
 import { Link } from "react-router-dom";
 import { userLogoutAction } from "../Redux/Actions/User";
 
-import Checkout from "../pages/Checkout";
+import Checkout from "../pages/Client/Checkout";
+
 import { useState } from "react";
 
 import { AiOutlineSearch } from "react-icons/ai";

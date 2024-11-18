@@ -101,7 +101,6 @@ export const orderDetailAction = (id) => async (dispatch, getState) => {
         };
         const { data } = await axios.get(
             `${BASE_URL}/api/orders/${id}`,
-
             config
         );
         dispatch({ type: ORDER_DETAIL_REQ_SUCCESS, payload: data });

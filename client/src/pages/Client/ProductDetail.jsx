@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
-import Layout from "../Layouts/Layouts";
+import Layout from "../../Layouts/Layouts";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { productAction } from "../Redux/Actions/Product";
-import {addToCartAction} from "../Redux/Actions/Cart";
- 
+import { productAction } from "../../Redux/Actions/Product";
+import {addToCartAction} from "../../Redux/Actions/Cart";
+
 function ProductDetail() {
 
   const { id } = useParams()

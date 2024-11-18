@@ -1,4 +1,4 @@
-import Layout from "../Layouts/Layouts"
+import Layout from "../../Layouts/Layouts"
 // import Products from "../components/Products"
 // import Landing from "./Landing"
 import { Link } from "react-router-dom";

@@ -5,24 +5,25 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import ProductDetail from "./pages/ProductDetail";
-import Home from "./pages/Home";
-import Profile from "./pages/Profile";
+import ProductDetail from "./pages/Client/ProductDetail";
+import Home from "./pages/Client/Home";
+
+import Profile from "./pages/Client/Profile";
 
 import Products from "./components/Products";
 
-import NotFound from "./pages/NotFound"
+import NotFound from "./pages/Client/NotFound"
 
-import Login from "./pages/auth/Login";
-import Recuperar from "./pages/auth/Recuperar";
-import Reset from "./pages/auth/Reset";
+import Login from "./pages/Client/auth/Login";
+import Recuperar from "./pages/Client/auth/Recuperar";
+import Reset from "./pages/Client/auth/Reset";
 
-import Register from "./pages/auth/Register";
-import Checkout from "./pages/Checkout";
+import Register from "./pages/Client/auth/Register";
+import Checkout from "./pages/Client/Checkout";
 import { useSelector } from "react-redux";
-import PlaceOrder from "./pages/PlaceOrder";
-import OrderConfirmation from "./pages/OrderConfirm";
-import { OrderHistory } from "./pages/OrderHistory";
+import PlaceOrder from "./pages/Client/PlaceOrder";
+import OrderConfirmation from "./pages/Client/OrderConfirm";
+import { OrderHistory } from "./pages/Client/OrderHistory";
 
 function App() {
 
@@ -68,6 +69,7 @@ function App() {
             path="/profile"
             element= {userInfo ?  <Profile/>:<Navigate to="/login"></Navigate>}
           ></Route>
+           
 
           <Route exact path="/products" element={<Products />}></Route>
 
@@ -80,9 +82,6 @@ function App() {
 
           <Route exact path="/checkout" element={<Checkout />}></Route>
           <Route exact path="/placeorder" element={<PlaceOrder />}></Route>
-
-
-
 
           <Route path="*" element={<NotFound />} />
 

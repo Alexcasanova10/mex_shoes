@@ -11,6 +11,8 @@ const products =  [
     numReview: 15,
     brand: "Adidas",
     sizes: [24, 24.5, 25, 25.5, 26, 26.5, 27, 27.5, 28, 28.5, 29, 29.5],
+    status_Active: true
+
   },
   {
     name: "Adidas Forum Low",
@@ -24,6 +26,7 @@ const products =  [
     numReview: 22,
     brand: "Adidas",
     sizes: [24, 24.5, 25, 25.5, 26, 26.5, 27, 27.5, 28, 28.5, 29, 29.5],
+    status_Active: true
   },
   {
     name: "Adidas Stan Smith",
@@ -37,6 +40,7 @@ const products =  [
     numReview: 18,
     brand: "Adidas",
     sizes: [24, 24.5, 25, 25.5, 26, 26.5, 27, 27.5, 28, 28.5, 29, 29.5],
+    status_Active: true
   },
   {
     name: "Adidas Stan Smith Crepe",
@@ -50,6 +54,7 @@ const products =  [
     numReview: 10,
     brand: "Adidas",
     sizes: [24, 24.5, 25, 25.5, 26, 26.5, 27, 27.5, 28, 28.5, 29, 29.5],
+    status_Active: true
   },
   {
     name: "Adidas Superstar ADV",
@@ -63,6 +68,7 @@ const products =  [
     numReview: 30,
     brand: "Adidas",
     sizes: [24, 24.5, 25, 25.5, 26, 26.5, 27, 27.5, 28, 28.5, 29, 29.5],
+    status_Active: true
   },
   {
     name: "Adidas Forum 84 Low ADV",
@@ -76,6 +82,7 @@ const products =  [
     numReview: 12,
     brand: "Adidas",
     sizes: [24, 24.5, 25, 25.5, 26, 26.5, 27, 27.5, 28, 28.5, 29, 29.5],
+    status_Active: true
   },
   {
     name: "Nike Air Max 90",
@@ -89,6 +96,7 @@ const products =  [
     numReview: 25,
     brand: "Nike",
     sizes: [24, 24.5, 25, 25.5, 26, 26.5, 27, 27.5, 28, 28.5, 29, 29.5],
+    status_Active: true
   },
   {
     name: "Puma RS-X³ Puzzle",
@@ -102,6 +110,7 @@ const products =  [
     numReview: 18,
     brand: "Puma",
     sizes: [24, 24.5, 25, 25.5, 26, 26.5, 27, 27.5, 28, 28.5, 29, 29.5],
+    status_Active: true
   },
   {
     name: "Vans Old Skool",
@@ -115,6 +124,7 @@ const products =  [
     numReview: 34,
     brand: "Vans",
     sizes: [24, 24.5, 25, 25.5, 26, 26.5, 27, 27.5, 28, 28.5, 29, 29.5],
+    status_Active: true
   },
   {
     name: "Reebok Club C 85",
@@ -128,6 +138,7 @@ const products =  [
     numReview: 12,
     brand: "Reebok",
     sizes: [24, 24.5, 25, 25.5, 26, 26.5, 27, 27.5, 28, 28.5, 29, 29.5],
+    status_Active: true
   },
   {
     name: "New Balance 574",
@@ -141,6 +152,7 @@ const products =  [
     numReview: 19,
     brand: "Otras",
     sizes: [24, 24.5, 25, 25.5, 26, 26.5, 27, 27.5, 28, 28.5, 29, 29.5],
+    status_Active: true
   },
 
 

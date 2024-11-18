@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Layout from "../../Layouts/Layouts";
-import { BASE_URL } from "../../Redux/Constants/BASE_URL";
+import Layout from "../../../Layouts/Layouts";
+import { BASE_URL } from "../../../Redux/Constants/BASE_URL";
 
 
 export default function Reset() {
@@ -17,7 +17,7 @@ export default function Reset() {
 
     try {
       // Realizar la petición POST a tu API para resetear la contraseña
-      const response = await fetch(`${BASE_URL}/api/reset/${token}`, {
+      const response = await fetch(`${BASE_URL}/api/users/reset/${token}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -83,7 +83,6 @@ export default function Reset() {
           Enviar
         </button>
 
-        {/* Mensaje de éxito o error */}
         {message && (
           <p className="text-green-500 mt-5">{message}</p>
         )}

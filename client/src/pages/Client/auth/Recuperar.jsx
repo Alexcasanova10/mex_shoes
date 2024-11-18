@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
-import Layout from "../../Layouts/Layouts";
+import Layout from "../../../Layouts/Layouts";
 import { useState } from "react";
-import { userPasswordResetAction } from "../../Redux/Actions/User.js";
+import { userPasswordResetAction } from "../../../Redux/Actions/User";
 
 
 export default function Recuperar() {

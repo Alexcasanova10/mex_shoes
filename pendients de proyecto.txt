@@ -71,27 +71,47 @@ unmeros de productos //done
 fitlros de tienda //done
 agrgar tallas a la compra //done
 register  // done
+reset passwrd //done
+API admin crudss de productos, //DONE
+admin iot modulo vsitas admin (crid de producto, listado pedidos, moduloIOT).//done
+vincular proyecto admin dashboard a api //done
+crud de prods, solo falta convertir a rojo tachado los prod inactivo y excluir los inactivos de la vista y q se haga wrap en el du//done
+hacer api lista de ordenes y psarla a dashbaprd //done
+-poner los 3 counts en el dashbaord //DONE
 
-reset passwrd
+-login de admin con middelware ,//DONE
+register de adminm,//DONE
+middelware de admin (middleware NO permtie q uno pase a menos q este autnetificado y tu user tenga isAdmin= true, es el mismo. si esta auth pasarlo a dsahboard o inicio) o sea modificar //DONE
+-poner logout en el navbar, //DONE
+-q la tienda excluya esos inactive y que además  en la pagina de esos con status false ponelres el de proximamnte disponible//done
+paypal y sus vistas y el proceos de compra final.//done
+-correo de confirmacion de compra con nombre,fecha de comra,precio addres de devnio idde prod nombre cliente imagen
+-mejorar la vista de compra realiazda.. y que redirija //done
 
 
-admin crudss de productos, listad de pedidos.listado de lcinets hacer rutas y vista de dashboard
-admin iot modulo
-vsitas admin (crid de producto, listado pedidos, listado clientes, moduloIOT).
 
-paypal y sus vistas y el proceos de compra final.
-correo de confirmacion de compra con nombre,fecha de comra.talla,precio addres de devnio idde prod nombre cliente imagen 
+-api de gooogle que me perimte iniciar sesión con el loclastorage (quiero q al hacr Google me devuelva al inicio con el nombre)
+poner el nombre en el botn azul de navbar de cliente
 
-perfil de user modficiar y poner eso q se pide o update
-google login y sus vista
 
-----------------------------------------------------------
-meter datos precargads BIEN hehcos
-testing de compras  que funcioenn correctamente
------------------------------------------------
-subit a vercel o subir a dominio y server propio
-y camibar rutas dentro de codigo
-------------------------------------------------
+
+
+
+-definir lógica de tallas de la compra a mano, como hacer en la compra, cmo hacer en bd basarme en adidas) y aplicarla en bd y en el cliente end y hacer  codigo para que actualice stock de tallas cada vez q se hace una compra 
+
+-enicrpar las rutas de llamdas de API: Simplemente encir´ptar al enviar la info (req) y al res se desencripta(res), todo esto sucee en postman y no se muestra nad de eso en front
+
+-perfil de user modficiar y poner eso q se pide o update //CHANCE QUITARLO ALV
+--------------------------------------------------------------------------------------------------------------------------------
+-meter datos precargads BIEN hehcos
+
+-testing de todo que funcioenn correctamente
+-Guardar en github
+-hacer certficado SSL
+-cahnce subir a vercel
+
+-testar la bd de Axel y si si jala moverle ahí }}
+-----------------------------------------------------------------------------------------------
 hacer diagram lofico lo hago yo 
 doc iee380 lohace axel
 doc de presentacion de proyecto power point lo hace beto
@@ -113,6 +133,37 @@ navidad comprarme ropa o unas pesas
 
 
 
+
+
+
+
+
+
+
+
+
+
+ sizes: {
+    type: [Number],
+     24:{
+        quantity: 5
+     }
+     24.5:{
+        quantity: 5
+     }
+     24.5:{
+        quantity: 5
+     }
+     25:{
+        quantity: 5
+     }
+     25.5:{
+        quantity: 5
+     }
+
+     //y asi...
+
+  },
 
 
 
