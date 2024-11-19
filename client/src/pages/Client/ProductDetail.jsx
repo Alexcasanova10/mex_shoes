@@ -63,7 +63,8 @@ function ProductDetail() {
                   
                   <p className="leading-relaxed">{product.description}</p>
                   <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
-                  <div className="grid grid-cols-4 gap-2">
+                  
+                  {/* <div className="grid grid-cols-4 gap-2">
                       {product.sizes.map((size) => (
                         <button
                           key={size}
@@ -75,7 +76,27 @@ function ProductDetail() {
                           {size}
                         </button>
                       ))}
+                  </div> */}
+
+                  <div className="grid grid-cols-4 gap-2">
+                    {product.sizes
+                      .filter((size) => size.quantity > 0) // Filtrar tallas disponibles
+                      .map((size) => (
+                        <button
+                          key={size.size} // Asegúrate de que "size.size" exista como identificador único
+                          onClick={() =>
+                            setSelectedSize(selectedSize === size.size ? null : size.size)
+                          } // Permitir seleccionar y deseleccionar
+                          className={`px-4 py-2 border rounded ${
+                            selectedSize === size.size ? "bg-black text-white" : "bg-white text-gray-800"
+                          } hover:bg-gray-200`}
+                        >
+                          {size.size} {/* Mostrar la talla */}
+                        </button>
+                      ))}
                   </div>
+
+
                    
                   </div>
                   

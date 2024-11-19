@@ -87,40 +87,89 @@ adminRoute.post("/register",
 );
 
 
-// Crear un nuevo producto
-adminRoute.post(
-  "/product",
-  asyncHandler(async (req, res) => {
-    const { name, image, sizes, brand, description, price, countInStock } = req.body;
+// Crear un nuevo producto, la ruta antigua......
+// adminRoute.post(
+//   "/product",
+//   asyncHandler(async (req, res) => {
+//     const { name, image, sizes, brand, description, price, countInStock } = req.body;
 
-    // Validar campos obligatorios
-    if (!name || !image || !sizes || !brand || !description || !price || !countInStock) {
-      return res.status(400).json({ message: "Todos los campos son requeridos" });
-    }
+//     // Validar campos obligatorios
+//     if (!name || !image || !sizes || !brand || !description || !price || !countInStock) {
+//       return res.status(400).json({ message: "Todos los campos son requeridos" });
+//     }
 
-    // Validar talla y marca
-    const isValidSize = sizes.every(size => enumSizes.includes(size));
-    const isValidBrand = enumBrand.includes(brand);
+//     // Validar talla y marca
+//     const isValidSize = sizes.every(size => enumSizes.includes(size));
+//     const isValidBrand = enumBrand.includes(brand);
 
-    if (!isValidSize || !isValidBrand) {
-      return res.status(400).json({ message: "Talla o marca no válidas" });
-    }
+//     if (!isValidSize || !isValidBrand) {
+//       return res.status(400).json({ message: "Talla o marca no válidas" });
+//     }
 
-    const product = new Product({
-      name,
-      image,
-      sizes,
-      brand,
-      description,
-      price,
-      countInStock,
-    });
+//     const product = new Product({
+//       name,
+//       image,
+//       sizes,
+//       brand,
+//       description,
+//       price,
+//       countInStock,
+//     });
 
-    const createdProduct = await product.save();
-    console.log("producot creado en da")
-    res.status(201).json(createdProduct);
-  })
-);
+//     const createdProduct = await product.save();
+//     console.log("producot creado en da")
+//     res.status(201).json(createdProduct);
+//   })
+// );
+
+  adminRoute.post(
+    "/product",
+    asyncHandler(async (req, res) => {
+      const { name, image, sizes, brand, description, price, countInStock } = req.body;
+
+      // Validar campos obligatorios
+      if (!name || !image || !sizes || !brand || !description || !price || countInStock === undefined) {
+        return res.status(400).json({ message: "Todos los campos son requeridos" });
+      }
+
+      // Validar la marca
+      if (!enumBrand.includes(brand)) {
+        return res.status(400).json({ message: "Marca no válida" });
+      }
+
+      // Validar el formato de tallas y cantidades
+      if (!Array.isArray(sizes) || sizes.length === 0) {
+        return res.status(400).json({ message: "Debe proporcionar al menos una talla y su cantidad" });
+      }
+
+      const formattedSizes = sizes.map((item) => {
+        const { size, quantity } = item;
+        // Validar que la talla sea válida y que la cantidad sea un número
+        if (!enumSizes.includes(size) || typeof quantity !== 'number' || quantity < 0) {
+          throw new Error(`Talla ${size} o cantidad no válidas`);
+        }
+        return { size, quantity };
+      });
+
+      // Crear un nuevo producto con las tallas y cantidades formateadas
+      const product = new Product({
+        name,
+        image,
+        sizes: formattedSizes,
+        brand,
+        description,
+        price,
+        countInStock
+      });
+
+      const createdProduct = await product.save();
+      console.log("Producto creado en la base de datos");
+      res.status(201).json(createdProduct);
+    })
+  );
+
+
+
 
 // Obtener todos los productos
 adminRoute.get(
@@ -157,41 +206,84 @@ adminRoute.get("/total-sales", async (req, res) => {
   }
 });
 
+// Editar producto, la ruta antigua....
+// adminRoute.put(
+//   "/product/:id",
+//   asyncHandler(async (req, res) => {
+//     const { id } = req.params;
+//     const { name, image, sizes, brand, description, price, countInStock } = req.body;
 
+//     const updatedProduct = await Product.findByIdAndUpdate(
+//       id,
+//       { name, image, sizes, brand, description, price, countInStock },
+//       { new: true }
+//     );
 
+//     if (!updatedProduct) {
+//       return res.status(404).json({ message: "Producto no encontrado" });
+//     }
 
+//     res.status(200).json(updatedProduct);
+//   })
+// );
 
-
-
-
-
-
-
-
-
-
-
-
-// Editar producto
 adminRoute.put(
   "/product/:id",
   asyncHandler(async (req, res) => {
     const { id } = req.params;
     const { name, image, sizes, brand, description, price, countInStock } = req.body;
 
-    const updatedProduct = await Product.findByIdAndUpdate(
-      id,
-      { name, image, sizes, brand, description, price, countInStock },
-      { new: true }
-    );
-
-    if (!updatedProduct) {
+    // Validar que el producto exista
+    const product = await Product.findById(id);
+    if (!product) {
       return res.status(404).json({ message: "Producto no encontrado" });
     }
 
+    // Validar campos obligatorios
+    if (!name || !image || !sizes || !brand || !description || !price || countInStock === undefined) {
+      return res.status(400).json({ message: "Todos los campos son requeridos" });
+    }
+
+    // Validar la marca
+    if (!enumBrand.includes(brand)) {
+      return res.status(400).json({ message: "Marca no válida" });
+    }
+
+    // Validar el formato de tallas y cantidades
+    if (!Array.isArray(sizes) || sizes.length === 0) {
+      return res.status(400).json({ message: "Debe proporcionar al menos una talla y su cantidad" });
+    }
+
+    const formattedSizes = sizes.map((item) => {
+      const { size, quantity } = item;
+      // Validar que la talla sea válida y que la cantidad sea un número
+      if (!enumSizes.includes(size) || typeof quantity !== 'number' || quantity < 0) {
+        throw new Error(`Talla ${size} o cantidad no válidas`);
+      }
+      return { size, quantity };
+    });
+
+    // Actualizar el producto con los nuevos datos
+    product.name = name;
+    product.image = image;
+    product.sizes = formattedSizes;
+    product.brand = brand;
+    product.description = description;
+    product.price = price;
+    product.countInStock = countInStock;
+
+    const updatedProduct = await product.save();
     res.status(200).json(updatedProduct);
   })
 );
+
+
+
+
+
+
+
+
 
 // Cambiar el estado del producto (activar/desactivar)
 adminRoute.put(
