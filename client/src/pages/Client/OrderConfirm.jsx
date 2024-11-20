@@ -158,6 +158,9 @@ const OrderConfirmation = () => {
                 <p>
                   <strong>Precio:</strong> ${item.price}
                 </p>
+                <p>
+                  <strong>Talla:</strong> {item.sizes}
+                </p>
                 <div className="flex items-center justify-center mt-4">
                   <img
                     src={item.image}

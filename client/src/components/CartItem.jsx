@@ -3,7 +3,6 @@ import { addToCartAction, removeFromCartAction } from "../Redux/Actions/Cart";
 
 
 export default function CartItem({ cartItems }) {
-
      const dispatch = useDispatch();
      const removeFromCartHandler = (id) => {
        dispatch(removeFromCartAction(id));
@@ -12,8 +11,6 @@ export default function CartItem({ cartItems }) {
      const addToCartHandler = (id, qty) => {
        dispatch(addToCartAction(id, qty));
      };
-    
-
   return (
     <>
       <div className="mt-8">

@@ -164,11 +164,7 @@ function ProductDetail() {
             </div>
           </section>
         </>
-      )}
-
-
-
-      
+      )}      
     </Layout>
   );
 }

@@ -231,10 +231,7 @@ export default function PlaceOrder() {
                 </button> 
 
                 {clientId && (
-                // <PayPalScriptProvider options={{ clientId: "test"}}>
-                //     <PayPalButtons
-                //     />
-                //   </PayPalScriptProvider>
+                 
                   <PayPalScriptProvider options={{ clientId: clientId }}>
                     <PayPalButtons
                       createOrder={(data, actions) => {
@@ -243,8 +240,7 @@ export default function PlaceOrder() {
                             {
                               amount: {
                                 currency_code: "USD",
-                                // currency_code: "MXN",
-                                value: total,
+                                 value: total,
                               },
                             },
                           ],
