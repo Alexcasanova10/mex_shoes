@@ -102,24 +102,28 @@ agregar cantidades de tallas en CREAER  y ACTUALIZAR, las fucnieons pienr count 
 actualizar pagina de order detail donde muestre la talla //done
 hacer compra SIN q me reduzca el stock pero meuestre la talla //done
 actualizar logica de compra que me REDUZCA el stock de dicha cantidad de tallas // done
-
 -actualizar correo de compra y pagina de comrpa con talla //done
+-meter datos precargads BIEN hehcos unos 48 8 por cada marca 
+-doc iee380 lohace axel //done
+-gant//done
+-doc de presentacion de proyecto power point lo hace beto //done
+-testar la bd de Axel y si si jala moverle ahí }}//done
+-meter la api de iot //done
 
--borrar todos las compras y datos anterior y users anterior excepto los de google, meter datos precargads BIEN hehcos unos 30 5 a 6 por cada marca, limpiar el pinche input de register y login 
-
--LIMPAIR TODO EL CÓDIGO DEL PROGRAMA TODOOOO
+-hacer certficado SSL
 -enicrpar las rutas de llamdas de API: Simplemente encir´ptar al enviar la info (req) y al res se desencripta(res), todo esto sucee en postman y no se muestra nad de eso en front
+-chance subir a vercel
 
--entender el código entero! cada uno por uno
+tenemos dos sopas: o subimos TODO a vercel y de ahi asacmoas el SSL, ya solo seria la encirptacion de apis
+ooo lo dejo en localhst, pero le consigo ssl a react y api y ya solor encriptacionde apis
+
 
 -testing de todo que funcioenn correctamente
+-entender el código entero! cada uno por uno
+-LIMPAIR TODO EL CÓDIGO DEL PROGRAMA TODOOOO
 
--hacer diagram lofico lo hago yo 
--doc iee380 lohace axel
--doc de presentacion de proyecto power point lo hace beto
--chance subir a vercel
--testar la bd de Axel y si si jala moverle ahí }}
--hacer certficado SSL
+
+
 
 -api de gooogle que me perimte iniciar sesión con el loclastorage (quiero q al hacr Google me devuelva al inicio con el nombre)
 poner el nombre en el botn azul de navbar de cliente, baiscamnente una sesión con google // esto hasta el final!

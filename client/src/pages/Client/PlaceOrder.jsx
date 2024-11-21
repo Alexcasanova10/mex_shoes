@@ -100,6 +100,7 @@ export default function PlaceOrder() {
         country,
       })
     );
+    alert('¡Dirección guardada exitosamente!')
   };
 
   return (

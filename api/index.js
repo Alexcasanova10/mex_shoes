@@ -38,6 +38,7 @@ const userRoute = require("./routes/User");
 const productRoute = require("./routes/Product");
 const orderRoute = require("./routes/Order");
 const adminRoute = require("./routes/Admin");
+const bandaRoute = require("./routes/Banda.js");
 
 app.use(express.json())
 
@@ -86,6 +87,9 @@ app.use("/api/orders", orderRoute);
 
 //routes for orders
 app.use("/api/admin", adminRoute);
+
+//routes for conveyor belt
+app.use("/api/banda", bandaRoute);
 
 // paypal payment api for client key;
 app.use("/api/config/paypal", (req, res) => {

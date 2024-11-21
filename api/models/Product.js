@@ -5,28 +5,20 @@
 
   const prodcutSchema = new mongoose.Schema({
     name: { type: String, required: true },
-    
     image: { type: String, required: true },
- 
     sizes: [
       {
         size: { type: Number, enum: enumSizes, required: true },
         quantity: { type: Number, required: true, min: 0, default: 0 },
       }
     ],
-
-
     brand: { 
       type: String, 
       enum: enumBrand
     },
-
-
     description: { type: String, required: true },
     price: { type: Number, required: true, default: 0 },
-
     countInStock: { type: Number,  default: 0 },
-
     status_Active:{type: Boolean, default: true },
     
 

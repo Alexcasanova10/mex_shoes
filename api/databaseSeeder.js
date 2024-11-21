@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const User = require("./models/User");
+const Order = require("./models/Order");
 const users = require("./data/Users");
 const Product = require("./models/Product");
 const products = require("./data/Products");
@@ -17,9 +18,18 @@ router.post(
 router.get(
   "/productos",
   AsynHandler(async (req, res) => {
-    await Product.deleteMany({});
+    // await Product.deleteMany({});
     const ProductSeeder = await Product.insertMany(products);
     res.send({ ProductSeeder });
+  })
+);
+
+router.get(
+  "/delorders",
+  AsynHandler(async (req, res) => {
+    await Order.deleteMany({});
+    // const ProductSeeder = await Product.insertMany(products);
+    res.send("ordenes elimnadas!!!");
   })
 );
 

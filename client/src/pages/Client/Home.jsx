@@ -30,7 +30,7 @@ const Home =  () => {
           <h1 class="text-3xl mb-7 text-center dark:text-white">Productos destacados</h1>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-             <Link to="/products/6738523b56f60447f2e29d03" className="group block">
+             <Link to="/products/673d89168a99d9ded02bb935" className="group block">
               <div className="bg-white shadow-lg rounded-lg p-6">
                 <img
                   className="h-64 w-full object-cover mb-4 rounded"
@@ -38,11 +38,11 @@ const Home =  () => {
                   alt="Producto 1"
                 />
                 <h3 className="text-xl font-semibold mb-2">Adidas Samba Classic</h3>
-                <p className="text-gray-600">$1200</p>
+                <p className="text-gray-600">$120</p>
                 
               </div>
             </Link>
-             <Link to="/products/6738523b56f60447f2e29d09" className="group block">
+             <Link to="/products/673d899b8a99d9ded02bba38" className="group block">
               <div className="bg-white shadow-lg rounded-lg p-6">
                 <img
                   className="h-64 w-full object-cover mb-4 rounded"
@@ -50,11 +50,11 @@ const Home =  () => {
                   alt="Producto 1"
                 />
                 <h3 className="text-xl font-semibold mb-2">Nike Air Max 90</h3>
-                <p className="text-gray-600">$1400</p>
+                <p className="text-gray-600">$140</p>
                 
               </div>
             </Link>
-             <Link to="/products/6738523b56f60447f2e29d0a" className="group block">
+             <Link to="/products/673d8b138a99d9ded02bbb4b" className="group block">
               <div className="bg-white shadow-lg rounded-lg p-6">
                 <img
                   className="h-64 w-full object-cover mb-4 rounded"
@@ -62,7 +62,7 @@ const Home =  () => {
                   alt="Producto 1"
                 />
                 <h3 className="text-xl font-semibold mb-2">Puma RS-X³ Puzzle</h3>
-                <p className="text-gray-600">$1100</p>
+                <p className="text-gray-600">$110</p>
                 
               </div>
             </Link>
