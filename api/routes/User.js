@@ -144,6 +144,16 @@ userRoute.post("/register",
         password,
       });
 
+      //se agfega la sesion
+      req.session.user = {
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        isAdmin: user.isAdmin,
+      };
+      
+
+
       if (user) {
         res.status(201).json({
           _id: user._id,

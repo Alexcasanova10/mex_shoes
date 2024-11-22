@@ -21,9 +21,9 @@ export function UserDropdown({ logoutHandler }) {
   const userProfileReducer = useSelector((state) => state.userProfileReducer);
   const { user, loading, error } = userProfileReducer;
    
-  
+ 
   return (
-    <Dropdown label={`Hola! ${user.name}`} dismissOnClick={false}>
+    <Dropdown label={(`Hola! ${user.name}` || `Invitado`)} dismissOnClick={false}>
 
      {/* <Dropdown label="owo" dismissOnClick={false}>    */}
 
