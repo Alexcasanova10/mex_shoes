@@ -111,26 +111,28 @@ actualizar logica de compra que me REDUZCA el stock de dicha cantidad de tallas 
 -meter la api de iot //done
 -subir a vercel // DONE 
 
--testing de todo que funcioenn correctamente en vercel
-testear lo delas cookies
-lo de paypal
-lo de mongocompass
-lo de jwt (Chance quitar el middleware)
+testear lo delas cookies e index.js //done
+lo de paypal q no lee el client id //done
+aqui debemos hacer una compra //done
+
+lo de jwt (Chance quitar el middleware) y lo de register y lo de nombre en el dropdown..
+
 
 -meter el ADMIN UI a vercel
-testear TODO
 
-una vez que temirnos y que todo jale bien en vercel..habremos temrinado con vercel...solo faltara localhost!
+-lo de mongocompass
 
+testear TODO de vercel
 
 
 
 -tsting de loclahost TODO, meterle ADMIN UI
+erorr de registrarse no genera token correctamet y e fuckin     <Dropdown label={`Hola! ${user.name}`} dismissOnClick={false}>
+ me marca error
+
 hacer certficado SSL y https de localhost
 
-
 -enicrpar las rutas de llamdas de API: Simplemente encir´ptar al enviar la info (req) y al res se desencripta(res), todo esto sucee en postman y no se muestra nad de eso en front // SLO LAS DE LOCALHOST
-
 
 -entender el código entero! cada uno por uno
 -LIMPAIR TODO EL CÓDIGO DEL PROGRAMA TODOOOO
