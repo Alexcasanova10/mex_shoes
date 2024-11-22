@@ -51,7 +51,8 @@ app.use(
 
 
 const corsOptions = {
-  origin: process.env.FRONTEND_URL || "http://localhost:5173",
+  // origin: process.env.FRONTEND_URL || "http://localhost:5173",
+  origin: process.env.FRONTEND_URL || process.env.FRONTEND_URL_ADMIN,
   credentials: true,
 };
 app.use(cors(corsOptions));

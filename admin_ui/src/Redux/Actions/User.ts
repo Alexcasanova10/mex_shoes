@@ -129,6 +129,7 @@ export const registerAction = (name: string, email: string, password: string) =>
       // Si ocurre un error, captura el mensaje adecuado
       const errorMessage = error.response?.data?.message || "Error inesperado al registrar";
 
+      console.log(errorMessage)
       // Despacha la acción de error con el mensaje
       dispatch({ type: USER_AUTH_FAILURE, payload: errorMessage });
 
