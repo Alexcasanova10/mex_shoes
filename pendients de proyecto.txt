@@ -93,7 +93,7 @@ paypal y sus vistas y el proceos de compra final.//done
 
 -definir lógica de tallas de la compra a mano, como hacer en la compra, cmo hacer en bd basarme en adidas) y aplicarla en bd y en el cliente end y hacer  codigo para que actualice stock de tallas cada vez q se hace una compra y piner la talla en la compra en sitio web y en el corroe 
 
-pasos
+	pasos
 actualizar el modelo de manera que acepte las tallas conforme quiero y meter un prodcuto asi // done
 actualizar la api de post pdocuto//done
 update api put product // done
@@ -110,12 +110,20 @@ actualizar logica de compra que me REDUZCA el stock de dicha cantidad de tallas 
 -testar la bd de Axel y si si jala moverle ahí }}//done
 -meter la api de iot //done
 
--hacer certficado SSL
+
+
+-hacer certficado SSL de localhost
 -enicrpar las rutas de llamdas de API: Simplemente encir´ptar al enviar la info (req) y al res se desencripta(res), todo esto sucee en postman y no se muestra nad de eso en front
 -chance subir a vercel
 
-tenemos dos sopas: o subimos TODO a vercel y de ahi asacmoas el SSL, ya solo seria la encirptacion de apis
-ooo lo dejo en localhst, pero le consigo ssl a react y api y ya solor encriptacionde apis
+OPCIOENS
+
+o subimos TODO a vercel y de ahi sacamos el SSL, ya solo seria la encirptacion de apis //seria igual vincular el mongodb compass a vercel
+
+o lo dejo en localhst, pero le consigo ssl a react y api y ya solor encriptacionde apis
+ 
+
+
 
 
 -testing de todo que funcioenn correctamente
@@ -175,10 +183,4 @@ navidad comprarme ropa o unas pesas
 
      //y asi...
 
-  },
-
-
-
-
-
-
+  }, 

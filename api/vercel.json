@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "name": "music-album",
+    "name": "mex-shoes-api",
     "builds": [
         {
             "src": "index.js",
