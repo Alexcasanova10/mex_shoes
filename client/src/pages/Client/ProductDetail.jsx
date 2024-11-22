@@ -78,7 +78,7 @@ function ProductDetail() {
                       ))}
                   </div> */}
 
-                  <div className="grid grid-cols-4 gap-2">
+                <div className="grid grid-cols-4 gap-2">
                     {product.sizes
                       .filter((size) => size.quantity > 0) // Filtrar tallas disponibles
                       .map((size) => (
