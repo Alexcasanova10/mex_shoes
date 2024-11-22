@@ -150,6 +150,9 @@ userRoute.post("/register",
           name: user.name,
           email: user.email,
           isAdmin: user.isAdmin,
+
+          token: generateToken(user._id), //se agrega token al register 
+
           createdAt: user.createdAt,
         });
       } else {
