@@ -21,9 +21,15 @@ export function UserDropdown({ logoutHandler }) {
   const userProfileReducer = useSelector((state) => state.userProfileReducer);
   const { user, loading, error } = userProfileReducer;
    
- 
+  console.log('User:', user);
+  console.log('Loading:', loading);
+  console.log('Error:', error);
+   
   return (
-    <Dropdown label={(`Hola! ${user.name}` || `Invitado`)} dismissOnClick={false}>
+    // <Dropdown label={`Hola! ${user.name}`} dismissOnClick={false}>
+
+    <Dropdown  label={`Hola! ${user?.name || 'Invitado'}`}
+    dismissOnClick={false}>
 
      {/* <Dropdown label="owo" dismissOnClick={false}>    */}
 

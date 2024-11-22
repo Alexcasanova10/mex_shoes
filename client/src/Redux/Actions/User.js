@@ -208,10 +208,12 @@ export const getUserProfile = () => async (dispatch, getState) => {
 
         const { data } = await axios.get(`${BASE_URL}/api/users/profile`, config);
 
+        
         dispatch({
             type: USER_PROFILE_SUCCESS,
             payload: data,
         });
+        console.log('User Info:', userInfo);
     } catch (error) {
         dispatch({
             type: USER_PROFILE_FAIL,
