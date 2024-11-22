@@ -24,7 +24,7 @@ export function UserDropdown({ logoutHandler }) {
   
   return (
     <Dropdown label={`Hola! ${user.name}`} dismissOnClick={false}>
-    {/* <Dropdown label="owo" dismissOnClick={false}>  */}
+     {/* <Dropdown label="owo" dismissOnClick={false}>   */}
       <Link to="/order-history">
         <Dropdown.Item>Historial de Compras</Dropdown.Item>
       </Link>

@@ -233,7 +233,7 @@ export default function PlaceOrder() {
 
                 {clientId && (
                  
-                  <PayPalScriptProvider options={{ clientId: clientId }}>
+                  <PayPalScriptProvider options={{clientId:clientId }}>
                     <PayPalButtons
                       createOrder={(data, actions) => {
                         return actions.order.create({

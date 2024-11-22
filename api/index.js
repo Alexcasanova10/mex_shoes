@@ -11,6 +11,53 @@ const passport = require('./passportConfig.js');
 // const GoogleStrategy = passport-google-oauth20
 
 
+//forzar a https
+if (process.env.NODE_ENV === "production") {
+  app.use((req, res, next) => {
+    if (req.headers["x-forwarded-proto"] !== "https") {
+      return res.redirect(`https://${req.headers.host}${req.url}`);
+    }
+    next();
+  });
+}
+
+// Configurar sesiones anterior
+// app.use(session({
+//   secret: 'secretonode', 
+//   resave: false, 
+//   saveUninitialized: false,
+//   cookie: {
+//     httpOnly: true, 
+//     secure: false,
+//     maxAge: 24 * 60 * 60 * 1000
+//   }
+// }));
+
+
+//nuevo configurar sesiones 
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET || "secretonode",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+      maxAge: 24 * 60 * 60 * 1000,
+    },
+  })
+);
+
+
+const corsOptions = {
+  origin: process.env.FRONTEND_URL || "http://localhost:5173",
+  credentials: true,
+};
+app.use(cors(corsOptions));
+
+
+
 //conectr db de mongo
 mongoose
   .connect(process.env.MONGODB_URI)
@@ -18,18 +65,6 @@ mongoose
   .then((err) => {
     err;
   });
-
-
-app.use(session({
-  secret: 'secretonode', 
-  resave: false, 
-  saveUninitialized: false,
-  cookie: {
-    httpOnly: true, 
-    secure: false,
-    maxAge: 24 * 60 * 60 * 1000
-  }
-}));
 
 
 
@@ -93,6 +128,10 @@ app.use("/api/banda", bandaRoute);
 
 // paypal payment api for client key;
 app.use("/api/config/paypal", (req, res) => {
+  res.send(process.env.PAYPAL_CLIENT_ID);
+});
+
+app.get("/api/config/paypal", (req, res) => {
   res.send(process.env.PAYPAL_CLIENT_ID);
 });
 

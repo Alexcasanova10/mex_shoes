@@ -109,27 +109,35 @@ actualizar logica de compra que me REDUZCA el stock de dicha cantidad de tallas 
 -doc de presentacion de proyecto power point lo hace beto //done
 -testar la bd de Axel y si si jala moverle ahí }}//done
 -meter la api de iot //done
+-subir a vercel // DONE 
+
+-testing de todo que funcioenn correctamente en vercel
+testear lo delas cookies
+lo de paypal
+lo de mongocompass
+lo de jwt (Chance quitar el middleware)
+
+-meter el ADMIN UI a vercel
+testear TODO
+
+una vez que temirnos y que todo jale bien en vercel..habremos temrinado con vercel...solo faltara localhost!
 
 
--subir a vercel
 
--hacer certficado SSL y https de localhost
 
--enicrpar las rutas de llamdas de API: Simplemente encir´ptar al enviar la info (req) y al res se desencripta(res), todo esto sucee en postman y no se muestra nad de eso en front
+-tsting de loclahost TODO, meterle ADMIN UI
+hacer certficado SSL y https de localhost
 
-OPCIOENS
-subimos TODO a vercel y de ahi sacamos el SSL, ya solo seria la encirptacion de apis //seria igual vincular el mongodb compass a vercel
 
-lo dejo en localhst, pero le consigo ssl a react y api y ya solor encriptacionde apis pero hago otro repositorio owo y se conecta igual a mongocompass (pero es en otro localhost)
- 
+-enicrpar las rutas de llamdas de API: Simplemente encir´ptar al enviar la info (req) y al res se desencripta(res), todo esto sucee en postman y no se muestra nad de eso en front // SLO LAS DE LOCALHOST
+
+
+-entender el código entero! cada uno por uno
+-LIMPAIR TODO EL CÓDIGO DEL PROGRAMA TODOOOO
 
 okey haremos lo siguiente: en una computadora lo configuraremos como https localhost y en otra como vercel de todas formas voy a bajar el proyecto e instalarlo en otra ruta y hacer otro repositorio local (osea copiar y pegar, pero este SÍ tendra la encriptación y ssl local y todo eso), se llamara MexShoesStore
 
 
-
--testing de todo que funcioenn correctamente
--entender el código entero! cada uno por uno
--LIMPAIR TODO EL CÓDIGO DEL PROGRAMA TODOOOO
 hoy queda todo excepto esto:
 
 -api de gooogle que me perimte iniciar sesión con el loclastorage (quiero q al hacr Google me devuelva al inicio con el nombre)
