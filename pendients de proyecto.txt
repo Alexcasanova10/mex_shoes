@@ -115,15 +115,13 @@ lo de paypal q no lee el client id //done
 aqui debemos hacer una compra //done
 -meter el ADMIN UI a vercel //done
 testear TODO de vercel//done
-
--lo de mongocompass, ver si jala en compas
--subir MAS producstos a a vercell asi machin nu buen
+-lo de mongocompass, ver si jala en compas //done
 
 
--mandar cva  aitiu
+-subir MAS producstos a a vercell asi machin nu buen, tienen q haber minimo 50, 8 de cada producto
 -entender el código entero! cada uno por uno
 -LIMPAIR TODO EL CÓDIGO DEL PROGRAMA TODOOOO
-
+-mandar cva  aitiu
 
 
 hoy queda todo excepto esto:
