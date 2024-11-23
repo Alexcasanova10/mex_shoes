@@ -278,13 +278,6 @@ adminRoute.put(
 );
 
 
-
-
-
-
-
-
-
 // Cambiar el estado del producto (activar/desactivar)
 adminRoute.put(
   "/product/:id/status",

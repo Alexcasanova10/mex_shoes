@@ -52,10 +52,16 @@ app.use(
 
 const corsOptions = {
   // origin: process.env.FRONTEND_URL || "http://localhost:5173",
-  origin: process.env.FRONTEND_URL || process.env.FRONTEND_URL_ADMIN,
-  credentials: true,
+  origin:[
+    process.env.FRONTEND_URL,
+    process.env.FRONTEND_URL_ADMIN 
+  ], 
+  credentials: true
 };
+
 app.use(cors(corsOptions));
+app.options("*", cors(corsOptions)); // Permitir preflight requests
+
 
 
 
@@ -78,7 +84,7 @@ const bandaRoute = require("./routes/Banda.js");
 
 app.use(express.json())
 
-app.use(cors())
+// app.use(cors())
  
 app.get('/', (req,res)=>{
   res.send('hola mundo')

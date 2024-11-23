@@ -110,38 +110,28 @@ actualizar logica de compra que me REDUZCA el stock de dicha cantidad de tallas 
 -testar la bd de Axel y si si jala moverle ahí }}//done
 -meter la api de iot //done
 -subir a vercel // DONE 
-
 testear lo delas cookies e index.js //done
 lo de paypal q no lee el client id //done
 aqui debemos hacer una compra //done
 
-lo de jwt (Chance quitar el middleware) y lo de register y lo de nombre en el dropdown..
-
-
--meter el ADMIN UI a vercel
-
+-meter el ADMIN UI a vercel....arreglarlo...
 -lo de mongocompass
 
 testear TODO de vercel
 
 
 
+
+
 -tsting de loclahost TODO, meterle ADMIN UI
 erorr de registrarse no genera token correctamet y e fuckin     <Dropdown label={`Hola! ${user.name}`} dismissOnClick={false}>
  me marca error
-
 hacer certficado SSL y https de localhost
-
 -enicrpar las rutas de llamdas de API: Simplemente encir´ptar al enviar la info (req) y al res se desencripta(res), todo esto sucee en postman y no se muestra nad de eso en front // SLO LAS DE LOCALHOST
-
 -entender el código entero! cada uno por uno
 -LIMPAIR TODO EL CÓDIGO DEL PROGRAMA TODOOOO
-
 okey haremos lo siguiente: en una computadora lo configuraremos como https localhost y en otra como vercel de todas formas voy a bajar el proyecto e instalarlo en otra ruta y hacer otro repositorio local (osea copiar y pegar, pero este SÍ tendra la encriptación y ssl local y todo eso), se llamara MexShoesStore
-
-
 hoy queda todo excepto esto:
-
 -api de gooogle que me perimte iniciar sesión con el loclastorage (quiero q al hacr Google me devuelva al inicio con el nombre)
 poner el nombre en el botn azul de navbar de cliente, baiscamnente una sesión con google // esto hasta el final!, primoer evaluarla en loca y luego en producttion
 --------------------------------------------------------------------------------------------------------------------------------
