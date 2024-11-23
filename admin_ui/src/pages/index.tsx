@@ -88,7 +88,7 @@ const DashboardPage: FC = function () {
         {/* Enlace al sitio web */}
         <div className="bg-yellow-500 text-white rounded-lg p-6 shadow-md">
           <h2 className="text-2xl font-bold">
-            <a href="http://localhost:5173/">MexShoes.com</a>
+            <a href="https://mex-shoes-client.vercel.app">MexShoes.com</a>
           </h2>
           <p className="mt-2">Sitio Web</p>
         </div>
