@@ -116,20 +116,25 @@ aqui debemos hacer una compra //done
 -meter el ADMIN UI a vercel //done
 testear TODO de vercel//done
 -lo de mongocompass, ver si jala en compas //done
+-subir MAS producstos a a vercell asi machin nu buen, tienen q haber minimo 50, 8 de cada producto //done
 
 
--subir MAS producstos a a vercell asi machin nu buen, tienen q haber minimo 50, 8 de cada producto
+-mover banner, maybe ponerle mas links y q se acomode en el respoinsive
+-subir el balance de patypal
+
+
+
 -entender el código entero! cada uno por uno
 -LIMPAIR TODO EL CÓDIGO DEL PROGRAMA TODOOOO
--mandar cva  aitiu
+revisar que TODOOOO este al pedo con lo del proyecto, organizar y que no falte nada y ver lo de español
 
 
+---------------------------------
+mañana
 hoy queda todo excepto esto:
+
 -api de gooogle que me perimte iniciar sesión con el loclastorage (quiero q al hacr Google me devuelva al inicio con el nombre)
 poner el nombre en el botn azul de navbar de cliente, baiscamnente una sesión con google // esto hasta el final!, primoer evaluarla en loca y luego en producttion
-
-
-
 -tsting de loclahost TODO, meterle ADMIN UI
 erorr de registrarse no genera token correctamet y e fuckin     <Dropdown label={`Hola! ${user.name}`} dismissOnClick={false}>
  me marca error

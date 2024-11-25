@@ -25,19 +25,19 @@ passport.use(new GoogleStrategy({
         await user.save();
       }
 
-      done(null, user);  // Aquí devolvemos el objeto completo del usuario
+      done(null, user);  
     } catch (error) {
       done(error, false);
     }
   }
 ));
 
-// Serialización y deserialización
+
 passport.serializeUser((user, done) => done(null, user.id));
 passport.deserializeUser(async (id, done) => {
   try {
     const user = await User.findById(id);
-    done(null, user);  // Aquí pasamos el usuario completo en vez del ID
+    done(null, user);  
   } catch (error) {
     done(error, null);
   }

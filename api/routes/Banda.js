@@ -5,7 +5,6 @@ const Banda = require("../models/Banda.js");
 
 
 bandaRoute.get("/databanda", asyncHandler(async(req,res)=>{
-     
     try{
 
         const bandaBlueTotal = await Banda.aggregate([

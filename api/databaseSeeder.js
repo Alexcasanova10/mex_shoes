@@ -18,7 +18,6 @@ router.post(
 router.get(
   "/productos",
   AsynHandler(async (req, res) => {
-    // await Product.deleteMany({});
     const ProductSeeder = await Product.insertMany(products);
     res.send({ ProductSeeder });
   })
@@ -28,7 +27,6 @@ router.get(
   "/delorders",
   AsynHandler(async (req, res) => {
     await Order.deleteMany({});
-    // const ProductSeeder = await Product.insertMany(products);
     res.send("ordenes elimnadas!!!");
   })
 );

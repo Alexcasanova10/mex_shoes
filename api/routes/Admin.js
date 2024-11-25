@@ -11,8 +11,7 @@ const enumSizes = [24, 24.5, 25, 25.5, 26, 26.5, 27, 27.5, 28, 28.5, 29, 29.5];
 const enumBrand = ["Adidas", "Nike", "Puma", "Reebok", "Charly", "Vans", "Panam", "Otras"];
 
 
-//el middelware admin protect es pa q no pase al dashboard , aplicarlo 
-
+ 
 adminRoute.post("/login",
   asyncHandler(async (req, res) => {
     const { email, password } = req.body;
@@ -67,7 +66,6 @@ adminRoute.post("/register",
         email,
         password,
         isAdmin: true,
-
       });
 
       if (user) {
@@ -137,7 +135,7 @@ adminRoute.post("/register",
         return res.status(400).json({ message: "Marca no válida" });
       }
 
-      // Validar el formato de tallas y cantidades
+        // Validar el formato de tallas y cantidades
       if (!Array.isArray(sizes) || sizes.length === 0) {
         return res.status(400).json({ message: "Debe proporcionar al menos una talla y su cantidad" });
       }
@@ -167,9 +165,6 @@ adminRoute.post("/register",
       res.status(201).json(createdProduct);
     })
   );
-
-
-
 
 // Obtener todos los productos
 adminRoute.get(

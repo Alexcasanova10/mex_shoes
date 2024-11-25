@@ -4,8 +4,6 @@ const AsyncHandler = require("express-async-handler");
 const User = require("../models/User.js");
 const generateToken = require("../tokenGenerate");
 const protect = require("../middleware/Auth");
-
-
 const nodemailer = require('nodemailer')
 const crypto = require('crypto')
 const bcrypt = require('bcryptjs');
@@ -45,8 +43,7 @@ require('dotenv').config();
       to: user.email,
       from: '2123300393@soy.utj.edu.mx',
       subject: `Hola ${nombre}, tu token de recuperación de contraseña está aquí` ,
-      text: `Sigue el enlace para restablecer tu contraseña: 
-      http://localhost:9000/reset/${token}   e igualmente, tu token es este: ${token}`
+      text: `Su token de recuperación es el siguiente: ${token}`
   };
 
   await transporter.sendMail(mailOptions);
@@ -79,10 +76,7 @@ userRoute.post('/reset/:token', AsyncHandler(async (req, res) => {
    });
 })); 
 
-
-
-
-
+ 
 //login
 userRoute.post("/login",
   AsyncHandler(async (req, res) => {
@@ -210,13 +204,12 @@ userRoute.put("/profile",protect,AsyncHandler(async (req, res) => {
         name: updatedUser.name,
         email: updatedUser.email,
         isAdmin: updatedUser.isAdmin,
-        // createdAt: updatedUser.createdAt,
-        token:generateToken(updatedUser._id)
+         token:generateToken(updatedUser._id)
       });
 
     } else {
       res.status(404);
-      throw new Error("USER NOT FOUND");
+      throw new Error("");
     }
   })
 );

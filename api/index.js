@@ -8,10 +8,9 @@ const mongoose = require("mongoose");
 const session = require('express-session');
 const jwt = require("jsonwebtoken");
 const passport = require('./passportConfig.js'); 
-// const GoogleStrategy = passport-google-oauth20
 
 
-//forzar a https
+//forzar a redirigir de http a  https
 if (process.env.NODE_ENV === "production") {
   app.use((req, res, next) => {
     if (req.headers["x-forwarded-proto"] !== "https") {
@@ -34,7 +33,7 @@ if (process.env.NODE_ENV === "production") {
 // }));
 
 
-//nuevo configurar sesiones 
+//nuevo configurar sesiones con verdcel
 app.use(
   session({
     secret: process.env.SESSION_SECRET || "secretonode",
@@ -51,7 +50,6 @@ app.use(
 
 
 const corsOptions = {
-  // origin: process.env.FRONTEND_URL || "http://localhost:5173",
   origin:[
     process.env.FRONTEND_URL,
     process.env.FRONTEND_URL_ADMIN 
@@ -60,20 +58,15 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.options("*", cors(corsOptions)); // Permitir preflight requests
+app.options("*", cors(corsOptions)); 
 
 
-
-
-//conectr db de mongo
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => console.log("Base de datos conectada exitosamente"))
   .then((err) => {
     err;
   });
-
-
 
 const databaseSeeder = require("./databaseSeeder");
 const userRoute = require("./routes/User");
@@ -84,19 +77,16 @@ const bandaRoute = require("./routes/Banda.js");
 
 app.use(express.json())
 
-// app.use(cors())
  
 app.get('/', (req,res)=>{
   res.send('hola mundo')
 })
 
-//rutas google auth
 app.get('/auth/google', 
   passport.authenticate('google', { scope: ['profile', 'email'] })
 
 );
 
-//rutas google auth
 app.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/login' }),
   (req, res) => {
@@ -106,11 +96,8 @@ app.get('/auth/google/callback',
 
     res.json({
       token:token
-    })
-    // Redirige al frontend con el token
-    // res.redirect(`${process.env.FRONTEND_URL}/?token=${token}`);
+    })  
     res.redirect(`${process.env.FRONTEND_URL}/`);
-    
   }
 );
 
@@ -142,13 +129,12 @@ app.get("/api/config/paypal", (req, res) => {
   res.send(process.env.PAYPAL_CLIENT_ID);
 });
 
-
 app.use((req, res, next) => {
   res.status(404).json({"message": "pagina no encontrada"});
 });
 
 app.listen(PORT || 9000, () => {
-  console.log(`server listening on port ${PORT}`);
+  console.log(`server en el  puerto ${PORT}`);
 });
 
 

@@ -32,11 +32,5 @@
     // rating: { type: Number, required: true, default: 0 },
     // numReview: { type: Number, required: true, default: 0 },
     // reviews: [reviewSchema],
-
-
-        //esta era la antiguaforma de add product
-    // sizes: {
-    //   type: [Number],
-    //   enum: enumSizes,
-    // },
+ 
 

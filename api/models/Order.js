@@ -5,7 +5,6 @@ const orderItemSchema =  mongoose.Schema({
   qty: { type: Number, required:   true },
   image: { type: String, required: true },
   price: { type: Number, required: true },
-//pdte borrar sizes si afecta la logica de api
   sizes: { type: Number },
    product: {
     type: mongoose.Schema.Types.ObjectId,

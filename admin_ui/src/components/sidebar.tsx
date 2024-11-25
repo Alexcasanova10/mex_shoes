@@ -21,13 +21,7 @@ import { MdHome } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { logoutAction } from "../Redux/Actions/User"
 const ExampleSidebar: FC = function () {
-  // const [currentPage, setCurrentPage] = useState("");
-
-  // useEffect(() => {
-  //   const newPage = window.location.pathname;
-
-  //   setCurrentPage(newPage);
-  // }, [setCurrentPage]);
+ 
 
   const [currentPage, setCurrentPage] = useState("");
   const dispatch = useDispatch();  // Usamos el hook para acceder a dispatch
@@ -37,9 +31,8 @@ const ExampleSidebar: FC = function () {
     setCurrentPage(newPage);
   }, [setCurrentPage]);
 
-  // Función que maneja el logout
-  const handleLogout = () => {
-    dispatch(logoutAction());  // Llama a la acción de logout
+   const handleLogout = () => {
+    dispatch(logoutAction());  
   };
 
   
@@ -92,16 +85,11 @@ const ExampleSidebar: FC = function () {
               >
                 Banda Transportadora
               </Sidebar.Item>
-              {/* <Sidebar.Item href="/authentication/sign-in" icon={HiLogin}>
-                Sign in
-              </Sidebar.Item>
-              <Sidebar.Item href="/authentication/sign-up" icon={HiPencil}>
-                Sign up
-              </Sidebar.Item> */}
+
             </Sidebar.ItemGroup>
             <Sidebar.ItemGroup>
           <Sidebar.Item
-                onClick={handleLogout}  // Agrega el manejador de logout aquí
+                onClick={handleLogout}  
                 icon={CiLogout}
               >
                 Cerrar Sesión
