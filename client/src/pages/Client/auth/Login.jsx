@@ -29,42 +29,42 @@ export default function Login() {
       <Layout>
     
           <>
-            <form className="max-w-sm mt-14 mb-10 mx-auto h-5/6" onSubmit={submitHandler}>
-          <h1 class="text-3xl mb-7  dark:text-white">Inicio de Sesión</h1>
-          <p class="text-2xl mb-7 font-thin text-gray-900 dark:text-white">¿No tienes cuenta? <span><a class="font-medium text-dark-600 dark:text -500 hover:underline" href="/register">Crear cuenta</a></span></p>
+          <form className="max-w-sm mt-14 mb-10 mx-auto h-5/6" onSubmit={submitHandler}>
+            <h1 class="text-3xl mb-7  dark:text-white">Inicio de Sesión</h1>
+            <p class="text-2xl mb-7 font-thin text-gray-900 dark:text-white">¿No tienes cuenta? <span><a class="font-medium text-dark-600 dark:text -500 hover:underline" href="/register">Crear cuenta</a></span></p>
 
-              <div className="mb-5">
-                <input
-                  type="email"
-                  id="email"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Correo electrónico"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-              <div className="mb-5">
-                <input
-                  type="password"
-                  id="password"
-                  className="bg-gray-50 border mb-7 border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Contraseña"
-                  required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-                <a href="/recuperar" class="text-dark dark:text hover:underline">¿Olvidaste tu contraseña?</a>
+                <div className="mb-5">
+                  <input
+                    type="email"
+                    id="email"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Correo electrónico"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+                <div className="mb-5">
+                  <input
+                    type="password"
+                    id="password"
+                    className="bg-gray-50 border mb-7 border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Contraseña"
+                    required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                  <a href="/recuperar" class="text-dark dark:text hover:underline">¿Olvidaste tu contraseña?</a>
 
-              </div>
+                </div>
 
-              <button type="submit" class="text-white bg-[#050708] hover:bg-[#050708]/80 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium block w-full  text-lg px-5 py-2.5 text-center  dark:hover:bg-[#050708]/40 dark:focus:ring-gray-600 me-2 mb-7"> 
-                Iniciar Sesión
-              </button>
+                <button type="submit" class="text-white bg-[#050708] hover:bg-[#050708]/80 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium block w-full  text-lg px-5 py-2.5 text-center  dark:hover:bg-[#050708]/40 dark:focus:ring-gray-600 me-2 mb-7"> 
+                  Iniciar Sesión
+                </button>
 
             </form>
 
-            <form className="max-w-sm mt-10 mb-10 mx-auto h-5/6" >
+            {/* <form className="max-w-sm mt-10 mb-10 mx-auto h-5/6" >
               <button type="submit" class="text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 font-medium block w-full text-lg px-5 py-2.5 text-center inline-flex justify-center items-center dark:focus:ring-gray-300 mb-2">
                 <svg class="w-5 h-5 mr-2" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
                   <path fill="#4285F4" d="M488 261.8c0-17.8-1.5-35.6-4.7-52.9H250.2v99.8h134.5c-5.8 30.2-23.1 55.8-49 73.2v60.8h79.2c46.2-42.6 73.1-105.5 73.1-180.9z"></path>
@@ -74,7 +74,7 @@ export default function Login() {
                 </svg>
                 Iniciar sesión con Google
               </button>
-            </form>
+            </form> */}
 
           </>
        </Layout>
