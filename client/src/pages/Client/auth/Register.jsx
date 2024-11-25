@@ -105,7 +105,7 @@ export default function Register() {
                 Crear Cuenta
               </button>
 
-
+{/* 
               <button type="button" class="text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 font-medium block w-full text-lg px-5 py-2.5 text-center inline-flex justify-center items-center dark:focus:ring-gray-300 mb-2">
                 <svg class="w-5 h-5 mr-2" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
                   <path fill="#4285F4" d="M488 261.8c0-17.8-1.5-35.6-4.7-52.9H250.2v99.8h134.5c-5.8 30.2-23.1 55.8-49 73.2v60.8h79.2c46.2-42.6 73.1-105.5 73.1-180.9z"></path>
@@ -114,7 +114,7 @@ export default function Register() {
                   <path fill="#EA4335" d="M250.2 104.6c34.7 0 66.3 12.1 91 34.9l67.9-66.5C376.2 40.8 314 8 250.2 8 153.8 8 66.8 60.4 26.4 140.6l89.1 61.1C135 147.1 187.5 104.6 250.2 104.6z"></path>
                 </svg>
                 Registrarse con Google
-              </button>
+              </button> */}
 
 
 
