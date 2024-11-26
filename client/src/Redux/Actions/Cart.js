@@ -21,7 +21,7 @@ export const addToCartAction = (id, qty, selectedSize) => async (dispatch, getSt
                 image: data.image,
                 price: data.price,
                 countInStock: data.countInStock,
-                sizes: selectedSize, // Aquí agregamos la talla seleccionada
+                sizes: selectedSize, 
                 qty
             }
         })

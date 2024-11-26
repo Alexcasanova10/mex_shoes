@@ -76,7 +76,7 @@ export const orderPaymentAction =
                     ? error.response.data.message
                     : error.message;
 
-            if (message === "Not authroized!") {
+            if (message === "No estas autorizado") {
                 dispatch(userLogoutAction());
             }
             dispatch({
@@ -110,7 +110,7 @@ export const orderDetailAction = (id) => async (dispatch, getState) => {
                 ? error.response.data.message
                 : error.message;
 
-        if (message === "Not authroized!") {
+        if (message === "No estás autorizado") {
             dispatch(userLogoutAction());
         }
         dispatch({

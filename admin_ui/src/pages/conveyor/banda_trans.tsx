@@ -70,15 +70,15 @@ const ConveyorPage: FC = () => {
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 p-4">
                  <div className="bg-blue-600 text-white rounded-lg p-6 shadow-md">
                   <h2 className="text-2xl font-bold">{totalBlue}</h2>
-                  <p className="mt-2">Color Azul</p>
+                  <p className="mt-2">Producto Nuevo</p>
                 </div>
                 <div className="bg-green-500 text-white rounded-lg p-6 shadow-md">
                   <h2 className="text-2xl font-bold">{totalGreen}</h2>
-                  <p className="mt-2">Color Verde</p>
+                  <p className="mt-2">Pendiente de envío</p>
                 </div>
                 <div className="bg-red-500 text-white rounded-lg p-6 shadow-md">
                   <h2 className="text-2xl font-bold">{totalRed}</h2>
-                  <p className="mt-2">Color Rojo</p>
+                  <p className="mt-2">Devolución</p>
                 </div>
               </div>
             </div>

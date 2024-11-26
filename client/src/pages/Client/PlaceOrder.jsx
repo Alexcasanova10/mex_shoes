@@ -16,26 +16,23 @@ export default function PlaceOrder() {
   const cart = useSelector((state) => state.cartReducer);
   const { cartItems, shippingAddress } = cart;
 
-  //end
-
-  // subtotal (does not include the tax , shipping fee)
-  const addDecimal = (num) => {
+   const addDecimal = (num) => {
     return (Math.round(num * 100) / 100).toFixed(2);
   };
-  //subtotal price
+ 
   const subtotal = addDecimal(
     cartItems.reduce((total, item) => total + item.qty * item.price, 0)
   );
   const taxPrice = addDecimal(Number(0.15 * subtotal).toFixed(2));
   const shippingPrice = addDecimal(subtotal > 100 ? 0 : 20);
-  //total
+  
   const total = (
     Number(subtotal) +
     Number(taxPrice) +
     Number(shippingPrice)
   ).toFixed(2);
 
-  //shipping address form data
+   
 
   const [address, setAddress] = useState(shippingAddress.address);
   const [city, setCity] = useState(shippingAddress.city);
@@ -44,7 +41,7 @@ export default function PlaceOrder() {
 
   const [clientId, setClientId] = useState(null);
 
-  //added for order confirm
+  
 
     const orderReducer = useSelector((state) => state.orderReducer);
     const { order, success } = orderReducer;
@@ -55,7 +52,7 @@ export default function PlaceOrder() {
   useEffect(() => {
     getPaypalClientID();
 
-    //add for order confirm , payment success
+   
 
     if (success) {
       dispatch({ type: ORDER_RESET });
